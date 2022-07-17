@@ -1,0 +1,62 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/cv-deux-fois",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/cv-deux-fois",
+        "outputPath": "dist/apps/cv-deux-fois"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "tmp/apps/cv-deux-fois"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "cv-deux-fois:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "cv-deux-fois:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "cv-deux-fois:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "cv-deux-fois:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/cv-deux-fois"],
+      "options": {
+        "jestConfig": "apps/cv-deux-fois/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/cv-deux-fois/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}

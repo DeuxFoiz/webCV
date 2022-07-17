@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "cv-deux-fois": "apps/cv-deux-fois",
+    "cv-deux-fois-e2e": "apps/cv-deux-fois-e2e"
+  }
+}
