@@ -1,0 +1,241 @@
+html,body, #__next, .app {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.app {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--bs-font-sans-serif);
+    color : var(--font-color);
+    background-color: var(--bg-body);
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    color:var(--anchor-color);
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 1rem;
+}
+
+
+.fadeup-enter-done {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fadeup-enter {
+    opacity: .01;
+    transform: translateY(20px);
+    transition: opacity .2s ease-out,transform .2s ease-out;
+}
+
+
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.img-container {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: var(--shadow-color-dark);
+    background-color: var(--bg-trigger);
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column, .flex {
+    display: flex;
+    flex-direction: column; 
+
+}
+.antiflex {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.chapter {
+    justify-content: center;
+    color: var(--font-color);
+    background-color: var(--bg-body);
+    line-height: 1.5;
+    padding: 50px;
+    margin: 0;
+    height: fit-content;
+    margin-left:280px;
+    z-index: 1;
+}
+
+.bg-trigger {
+    background-color: var(--bg-trigger);
+}
+
+
+.link {
+    color: var(--anchor-color);
+    text-decoration: none;
+}
+
+.title {
+    font-size: 2rem;
+    position: relative;
+    padding-top : 50px;
+}
+.big-title {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top : 50px;
+}
+.welcome-tile {
+    font-size: 2em;
+    color: var(--btn-color);
+    text-align: center;
+    font-weight: bold; 
+}
+.bullet-bar {
+    padding-left: 1.5rem;
+}
+.bullet-bar::before {
+    content: "▎";
+    width: 2px;
+    height: 50px;
+    color: #274b69;
+}
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 30px;
+    white-space: nowrap;
+    margin-left: 50px;
+}
+.text {
+    max-width: 70%;
+    /* justify  */
+    text-align: justify;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    border-color: rgba(0,0,0,0.08);  
+    color: inherit;
+    background-color: #fff;
+    border: 0;
+    opacity: .25;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.svg-inline {
+    margin-right: 0.5rem;
+    margin-left: -0.5rem;
+    display: inline-block;
+    position: relative;
+    top: 0.175rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+.btn {
+    height: 20px;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 12px 16px;
+    margin: auto;
+  }
+  .btn:hover {
+    background: rgba(0,0,0,0.5);
+  }
+
+.top-spaced {
+    margin-top: 3rem;
+}
+
+
+    @media screen and (min-width: 100px) {
+        .text {
+            max-width: 100%;
+            /* justify  */
+            
+    text-align: center;
+        }
+    }        
+    
+    @media (min-width: 1250px) {
+        .text {
+            margin-left: 20px;
+            margin-right: 50px;
+            max-width: 700px;
+        }
+    }
+
+  @media (max-width: 1250px) {
+    .text {
+        max-width: 85%;
+        margin: 0;
+        padding: 0;
+    }
+    .flex-column {
+        justify-content: center;
+        align-items: center;
+    }
+    .flex {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .antiflex {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .chapter {
+        margin:0;
+        margin-bottom: 60px;
+        padding: 0;
+        width: 100vw;
+    }
+
+
+    .img-pres {
+        width: 100%;
+        height: auto;
+    }
+    .container-switch {
+        position: absolute;
+        top: 15px;
+        left: 0;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .text {
+        max-width: 50%;
+        /* justify  */
+        text-align: justify;
+    }
+}

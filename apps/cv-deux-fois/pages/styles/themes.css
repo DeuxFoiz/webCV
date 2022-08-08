@@ -1,0 +1,32 @@
+ 
+:root {
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+
+[data-theme='light'] {
+  --bg-body: #ffffff;
+  --bg-trigger: #f9f9f9;
+  --anchor-color: #21252b;
+  --font-color: #2d2d2d;
+  --btn-color: #fafafa;
+  --neutral-color:  #4f4f4f;
+  --card-color : #2a5980;
+  --action-color: #475dc2;
+  --shadow-color :  rgba(0, 0, 0, 0.12) 0px -1px 4px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  --shadow-color-dark : rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
+}
+
+[data-theme='dark'] {
+  --bg-body: #21252b;
+  --bg-trigger: #282c34;
+  --anchor-color: #ffffff;
+  --font-color: #a2a9b6;
+  --btn-color: #fafafa;
+  --neutral-color:  #4f4f4f;
+  --card-color : #2a5980;
+  --action-color: #475dc2;
+  --shadow-color :  rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  --shadow-color-dark : rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
+}

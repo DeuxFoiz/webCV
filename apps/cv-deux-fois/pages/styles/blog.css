@@ -1,0 +1,8 @@
+.container-blog {
+    max-width: 800px;
+
+}
+
+h1, h2, h3, h4, h5, h6, ol, ul, thead {
+    color: var(--darkreader-text--dark);
+}

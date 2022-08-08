@@ -1,0 +1,188 @@
+
+.navigation-menu, header {
+  font-family: var(--bs-font-monospace);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 280px;
+  background: var(--card-color);
+  color: var(--btn-color);
+  padding-top: 20px;
+  z-index: 2;
+}
+.pdp {
+  max-width: 160px;
+  border-radius: 50%;
+}
+.bio {
+  font-family: var(--bs-font-sans-serif);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+
+.navigation-menu ul {
+  padding: 0;
+  margin: 0;
+}
+.navigation-menu li {
+  list-style-type: none;
+}
+.navigation-menu nav div {
+  font-weight: bold;
+  color: var(--btn-color);
+  padding: 0.625rem 1.5rem;
+  display: block;
+  cursor: pointer;
+}
+.navigation-menu nav div:hover {
+  color: rgba(0,0,0,0.5);
+}
+
+.hamburger {
+  display: none;
+}
+.hamburger svg {
+  fill: var(--btn-color);
+}
+
+.hireMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  height: 20px;
+  width: 80px;
+  font-size: 0.875rem;
+
+}
+@media screen and (min-width: 1250px) {
+  .hireMe {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1250px) {
+  .little-screen-hidden{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  #nav-links :nth-child(3) {
+    margin-right:10px;
+  }
+  #nav-links :nth-child(2) {
+    margin-right: 100px;
+  }
+  .hidden {
+    display: none;
+    height: 0;
+  }
+  .navigation-menu ul {
+    justify-content: space-around;
+    padding: 0 20px;
+  }
+  .hamburger {
+    margin-bottom: 10px;
+    display: block;
+    z-index: 2;
+    margin-left: -20px;
+  }
+  .btn {
+    order: 1;
+  }
+  nav {
+    order: 2;
+    width: 100%;
+  }
+
+  .navigation-menu, header  {
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    padding-top: 20px;
+    width: 100%;
+    margin-bottom: 0;
+
+  }
+  .hireMe {
+    margin-bottom: 5px;
+  }
+  .arrow-icon {
+    margin-bottom: 10px;
+  }
+
+  .expanded {
+    z-index: 1;
+    height: auto;
+  }
+
+
+  nav {
+    order: 0;
+  }
+  .overview {
+    order: 1;
+  }
+  .navigation-menu .expanded {
+    order: 0;
+    margin-bottom: 0px;
+  }
+  
+  .navigation-menu li a svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    position: relative;
+    top: -1rem;
+    left: 50%;
+    margin-top:5px;
+  }
+  .navigation-menu li a {
+    font-size: 0.875rem;
+    padding: 0 0.825em 0 0;
+  }
+  .hireMe {
+    margin-top: 0;
+  }
+  /* .overview {
+    margin-left: 150px;
+
+  } */
+}
+
+
+@media screen and (max-width: 768px) {
+  .navigation-menu nav div {
+    line-height: 0;
+    font-size: 0;
+    justify-content: space-around;
+    padding: 0;
+  }	
+  .hireMe {
+
+    height: 40px;
+    position: relative;
+    left: -10px;
+  }
+  .hireMe svg {
+    padding-left: 15px;
+    padding-top: 10px;
+    
+  }
+
+  .overview {
+    margin-left: 0;
+  }
+}

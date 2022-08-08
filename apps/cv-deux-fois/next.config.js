@@ -10,6 +10,9 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+  images: {
+    domains: ['cdn.jsdelivr.net','influxdata.github.io','d33wubrfki0l68.cloudfront.net'],
+  },
 };
 
 module.exports = withNx(nextConfig);
