@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Project from './projects/project';
+import Project from '../components/project';
 
 export default function Portfolio(props : {
 	  projects: any[];
@@ -46,4 +46,25 @@ export default function Portfolio(props : {
 		})}
 	</div>
 	);
+}
+
+
+
+export async function getServerSideProps() {
+    // const port = process.env.PORT || 4200;
+    // const techs = await fetch(`http://localhost:${port}/api/techs`).then(res => res.json());
+    // const icons = await fetch(`http://localhost:${port}/api/icons`).then(res => res.json());
+    // const projects = await fetch(`http://localhost:${port}/api/projects`).then((res) => res.json());
+    const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
+    const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
+    const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
+
+    return {
+        props: {
+            techs: techs.data,
+            icons: icons.data,
+            projects: projects.data
+        }
+    }
+
 }

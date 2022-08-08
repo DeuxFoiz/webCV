@@ -19,6 +19,7 @@ export default function Techs(props: {
   if (!props.techs || !props.icons) {
     return <div>Loading...</div>;
   }
+  
 
   const data = props.techs.map((tech) => {
     return {
@@ -60,7 +61,7 @@ export default function Techs(props: {
       <div className="chapter">
         <h1 className="title bullet-bar">Technologies</h1>
 		{/* {user ? <AddIcon icons={props.icons} setIcons={props.setIcons} /> : null} */}
-        <div className="flex-grid flex-center">
+        <div className="flex-grid flex-center" style={{marginBottom:'100px'}}>
           {data.map(({ value, text, icons }, index) => (
             <div className="grid-column flex-column" key={index}>
               <h2 className="title-overview"> {value} </h2>

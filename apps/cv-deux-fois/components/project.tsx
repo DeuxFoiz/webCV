@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useState } from "react";
-import Devicon from "../utils/devicon";
+import Devicon from "../pages/utils/devicon";
 
 export default function Project(props : {
         name: string;

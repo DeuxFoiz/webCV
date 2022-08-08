@@ -13,7 +13,7 @@ export default function Intro() {
                     N&rsquo;hésitez pas à regarder mon Portfolio ou mon Curriculum Vitae pour plus d&rsquo;informations.
                     
                     </p>
-                    <div  className="img-pres pres-content">
+                    <div  className="img-pres pres-content" >
                         <Image src="/../assets/img/programming.svg" alt="DeuxFois" width={400} height={400} loading="lazy"/>
                     </div>
                 </div>
