@@ -15,6 +15,14 @@ export default async function icons_handler (req, res) {
         res.status(400).json({ success: false })
       }
       break
+    case 'PUT':
+      try {
+        const data = await Tech.findByIdAndUpdate(req.body._id, req.body)
+        res.status(200).json({ success: true, data: data })
+      } catch (error) {
+        res.status(400).json({ success: false })
+      }
+      break
     case 'POST':
       try {
         const user = await Icon.create(req.body)

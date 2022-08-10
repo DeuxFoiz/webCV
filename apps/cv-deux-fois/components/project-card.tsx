@@ -22,6 +22,7 @@ export default function Project(props : {
         <div className="flex-center project-item shadow-container" >
             <div className="flex-row flex-center  "> 
                 <div className="flex-column flex-center">
+                    <Image src={props.project.image} width={375} height={250} alt={props.project.name} style={{borderRadius:'1%'}} />
                     <h3 className="subtitle" style={ { marginTop:'1rem', marginLeft:'0'}}>{props.project.name}</h3>
                     <div className="flex-row flex-center" >
                         {            
