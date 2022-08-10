@@ -17,6 +17,7 @@ export default function Project(props : {
         img_link: string;
     }>;
 }) {  
+    
     const devicons = props.icons.filter((icon) => { return props.project.icons.includes(icon.name) });
     return (
         <div className="flex-center project-item shadow-container" >
