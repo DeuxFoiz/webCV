@@ -19,7 +19,7 @@ export default function Project(props : {
 }) {  
     const devicons = props.icons.filter((icon) => { return props.project.icons.includes(icon.name) });
     return (
-        <div className="antiflex flex-center project-item shadow-container" >
+        <div className="flex-center project-item shadow-container" >
             <div className="flex-row flex-center  "> 
                 <div className="flex-column flex-center">
                     <h3 className="subtitle" style={ { marginTop:'1rem', marginLeft:'0'}}>{props.project.name}</h3>

@@ -10,6 +10,7 @@ import EditIcon from "../components/edit-icon";
 export default function Dashboard ({techs, icons, projects}) {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [selectedIcon, setSelectedIcon] = useState(null);
+  
 
   if (isLoading) {
     return <div>Loading ...</div>;
@@ -57,7 +58,6 @@ export async function getServerSideProps() {
     const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
     const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
     const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
-
     return {
         props: {
             techs: techs.data,

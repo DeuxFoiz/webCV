@@ -37,8 +37,10 @@ export default function EditProject(props : {
 }) {
 
     const [project, setProject] = useState(props.project);
+    if (!project) return null;
     return (
-        <div className="edit-container flex-column">
+        <div className="glass-overlay" onClick={() => setProject(null)}>
+        <div className="edit-container">
             <button className="close" onClick={() => setProject(null)}>×</button>
             <div className="top-spaced" style={{"margin": "4em"}}>
             <Project project={project} icons={props.icons}/>
@@ -74,6 +76,7 @@ export default function EditProject(props : {
                 <button className="submit" type="submit" value="Submit">Submit</button> 
             </form>
             </div>
+        </div>
         </div>
     );
 }
