@@ -169,7 +169,7 @@
       display: flex;
       flex-direction: column;
 
-      padding: 0.3rem 0.5rem;
+      padding: 0.3rem 0rem;
   }	
 
   #nav-links :nth-child(2) {
@@ -184,14 +184,14 @@
     transform: translateX(-50%);
   }
   .hireMe {
-    height: 40px;
+    height: 35px;
     margin-top: 5px;
-    margin-left: 49%;
+    margin-left: 48%;
     transform: translateX(-50%);
     
   }
   .hireMe svg {
-    margin-left: 20px !important;
+    margin-left: 25px !important;
   }
 
   .overview {
