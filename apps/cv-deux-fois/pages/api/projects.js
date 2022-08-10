@@ -1,3 +1,4 @@
+import { cp } from 'fs'
 import dbConnect from '../../libs/dbConnect'
 import Icon from '../../libs/models/Icon'
 import Project from '../../libs/models/Project'
@@ -19,10 +20,11 @@ export default async function icons_handler (req, res) {
                 description:project.description,
                 image:project.image,
                 link:project.link,
-                icons: project.icons.map(icon => {
-                    return icons.find(icon_ => icon_.name === icon)
-                }
-                )
+                // icons: project.icons.map(icon => {
+                //     return icons.find(icon_ => icon_.name === icon)
+                // }
+                // )
+                icons: project.icons
             }
         })
         res.status(200).json({ success: true, data: response })

@@ -1,4 +1,4 @@
-import Devicon from '../utils/devicon';
+import Devicon from '../../components/devicon';
 
 const handleClick = (icon, icons) => {
   const response = fetch('/api/icons', {

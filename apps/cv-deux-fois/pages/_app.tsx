@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { Auth0Provider } from "@auth0/auth0-react";
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-
 import Navbar from './navbar';
 import './styles/global.css';
 import './styles/themes.css';
@@ -19,7 +18,11 @@ if (!SSR) document.documentElement.setAttribute('data-theme', 'light')
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <Auth0Provider
+    domain="dev-s4knuldn.us.auth0.com"
+    clientId="qUbMSzjUSqD7cXXefbdHQRlspYe9nMxT"
+    redirectUri={'http://localhost:4200/'}
+    >
       <Head>
         <title>DeuxFois</title>
         <link rel="shortcut icon" href="/favico.ico" />
@@ -31,7 +34,7 @@ function App({ Component, pageProps }: AppProps) {
       <main className="app">
           <Component {...pageProps} />   
       </main>
-    </>
+    </Auth0Provider>
   );
 }
 

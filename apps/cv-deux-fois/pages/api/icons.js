@@ -23,6 +23,14 @@ export default async function icons_handler (req, res) {
         res.status(400).json({ success: false })
       }
       break
+    case 'PUT':
+      try {
+        const user = await Icon.findByIdAndUpdate(req.body._id, req.body)
+        res.status(200).json({ success: true, data: user })
+      } catch (error) {
+        res.status(400).json({ success: false })
+      }
+      break
     case 'DELETE':
       try {
         const icon = await Icon.findOneAndDelete({ _id: req.body })
