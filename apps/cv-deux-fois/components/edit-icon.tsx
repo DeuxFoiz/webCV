@@ -25,42 +25,43 @@ export default function EditIcon(props : {
         img_link: string;
         category: string;
     },
-    setIcon: any,
+    setIcon: (icon: { _id: string; name: string; border_color: string; img_link: string; category: string; }) => void;
 }) {
     const [icon, setIcon] = useState(props.icon);
+
     return (
-        <div className="glass-overlay">
+    <div className="glass-overlay">
         <div className="edit-container flex-column flex-center center-y">
             <button className="close" onClick={() => props.setIcon(null)}>×</button>
             <Devicon
-                img_link={props.icon.img_link}
-                border_color={props.icon.border_color}
-                name={props.icon.name}
+                img_link={icon.img_link}
+                border_color={icon.border_color}
+                name={icon.name}
             />
-            <form className="flex-column flex-center" onSubmit={(e) => {e.preventDefault(); submitIcon(icon, props.setIcon); }}>
-                <input className="input" type="text" value={props.icon.img_link} onChange={(e) => {
+            <form className="flex-column flex-center" onSubmit={(e) => {e.preventDefault(); submitIcon(icon, setIcon); }}>
+                <input className="input" type="text" value={icon.img_link} onChange={(e) => {
                     e.preventDefault();
-                    props.icon.img_link = e.target.value;
-                    setIcon({...props.icon, img_link: e.target.value});
+                    icon.img_link = e.target.value;
+                    setIcon({...icon, img_link: e.target.value});
                 }}/>
-                <input className="input" type="text" value={props.icon.name} onChange={(e) => {
+                <input className="input" type="text" value={icon.name} onChange={(e) => {
                     e.preventDefault();
-                    props.icon.name = e.target.value;
-                   setIcon({...props.icon, name: e.target.value});
+                    icon.name = e.target.value;
+                    setIcon({...icon, name: e.target.value});
                 }}/>
-                <input className="input" type="text" value={props.icon.border_color} onChange={(e) => {
+                <input className="input" type="text" value={icon.border_color} onChange={(e) => {
                     e.preventDefault();
-                    props.icon.border_color = e.target.value;
-                    setIcon({...props.icon, border_color: e.target.value});
+                    icon.border_color = e.target.value;
+                    setIcon({...icon, border_color: e.target.value});
                 }}/>
-                <input className="input" type="text" value={props.icon.category} onChange={(e) => {
+                <input className="input" type="text" value={icon.category} onChange={(e) => {
                     e.preventDefault();
-                    props.icon.category = e.target.value;
-                    setIcon({...props.icon, category: e.target.value});
+                    icon.category = e.target.value;
+                    setIcon({...icon, category: e.target.value});
                 }}/>
                 <button className="submit" type="submit" value="Submit">Submit</button>  
             </form>
         </div>
-        </div>
+    </div>
     )
 }

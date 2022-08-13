@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Devicon from '../../components/devicon';
 import EditIcon from "../../components/edit-icon";
 import EditTech from "../../components/edit-techs";
+
 const handleClick = (icon, icons) => {
   const response = fetch('/api/icons', {
     method: 'DELETE',
@@ -14,7 +15,6 @@ const handleClick = (icon, icons) => {
   return { response };
 };
 
-
 export default function Techs(props: {
   techs: any[];
   icons: any[];
@@ -22,10 +22,10 @@ export default function Techs(props: {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [selectedIcon, setSelectedIcon] = useState(null);
   const [selectedTech, setSelectedTech] = useState(null);
-  console.log(selectedTech);
   if (!props.techs || !props.icons) {
     return <div>Loading...</div>;
   }
+
   
   const data = props.techs.map((tech) => {
     return {
@@ -46,6 +46,7 @@ export default function Techs(props: {
 				justify-content: center;
 				align-items: start;
 				margin-top: 50px;
+        margin-bottom: -50px;
 			}
 			.text-desc {
 					max-width: 200px;
@@ -67,12 +68,14 @@ export default function Techs(props: {
       </style>
       <div className="chapter">
         <h1 className="title bullet-bar">Technologies</h1>
-        <div className="flex-grid flex-center" style={{marginBottom:'100px'}}>
+        <div className="flex-grid flex-center">
           {data.map(({ tech, icons }, index) => (
             <div className="grid-column flex-column" key={index}>
+              <div>
               <div onClick={() => setSelectedTech(tech)}>
               <h2 className="title-overview"> {tech.value} </h2>
               <p className="text-desc"> {tech.text} </p>
+              </div>
               {isAuthenticated && selectedTech === tech ? (
                 <EditTech tech={tech} setTech={setSelectedTech} />
               ) : null}
@@ -86,7 +89,7 @@ export default function Techs(props: {
                     border_color={icon.border_color}
                     name={icon.name}
                   />
-                  {/* {user && <input type="button" value="×" onClick={() => handleClick(icon, totalIcons)} />} */}
+
                 </div>
                   {isAuthenticated && selectedIcon === icon ? (
                       <EditIcon icon={icon} setIcon={setSelectedIcon}/>

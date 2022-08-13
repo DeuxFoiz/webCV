@@ -21,28 +21,28 @@ export default function EditTech(props : {
         value: string;
         text: string;
     },
-    setTech: any,
+    setTech: (tech: { _id: string; value: string; text: string; }) => void;
 }) {
     const [tech, setTech] = useState(props.tech);
-    if (tech === null) return null;
+
     return (
-    <div className="glass-overlay">
+    <div className="glass-overlay" >
         <div className="edit-container flex-column flex-center center-y">
-        <button className="close" onClick={() => setTech(null)}>×</button>
-            <h2 className="title-overview"> {props.tech.value} </h2>
-              <p className="text-desc"> {props.tech.text} </p>
-            <form className="flex-column flex-center" onSubmit={(e) => {e.preventDefault(); submitTech(tech, props.setTech); }}>
+        <button className="close" onClick={() => props.setTech(null)}>×</button>
+            <h2 className="title-overview"> {tech.value} </h2>
+              <p className="text-desc"> {tech.text} </p>
+            <form className="flex-column flex-center" onSubmit={(e) => {e.preventDefault(); submitTech(tech, setTech); }}>
                 <input type="text" value={tech.value} onChange={(e) => {
                     e.preventDefault();
-                    props.tech.value = e.target.value;
-                    setTech({...props.tech, value: e.target.value});
+                    tech.value = e.target.value;
+                    setTech({...tech, value: e.target.value});
                 }}/>
                 <TextareaAutosize value={tech.text}  className="input textaera"  style={{width:'80vw', maxWidth:'500px'}} onChange={(e) => {
                     e.preventDefault();
-                    props.tech.text = tech.text;
-                    submitTech(tech, props.setTech);
+                    tech.text = e.target.value;
+                    submitTech(tech, setTech);
                 }}/>
-                <button className="save" onClick={() => props.setTech(tech)}>Save</button>
+                <button className="submit" type="submit" value="Submit" onClick={() => setTech(tech)}>Submit</button>
             </form>
         </div>
     </div>
