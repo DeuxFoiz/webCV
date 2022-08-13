@@ -27,10 +27,8 @@ export default function Index({techs, icons, projects}) {
     return (
     <>
         <Intro />
-        <Fade delay={100} triggerOnce>
         {techs && <Techs techs={techs} icons={icons}/>}
         <Portfolio projects={projects} icons={icons}/>
-        </Fade>
     </>
     );
 }

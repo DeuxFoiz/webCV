@@ -15,24 +15,25 @@ const handleClick = (icon, icons) => {
   return { response };
 };
 
+
 export default function Techs(props: {
   techs: any[];
   icons: any[];
 }) {
-  const { user, isAuthenticated, isLoading } = useAuth0();
-  const [selectedIcon, setSelectedIcon] = useState(null);
-  const [selectedTech, setSelectedTech] = useState(null);
   if (!props.techs || !props.icons) {
-    return <div>Loading...</div>;
+    return <div className="chapter flex-column flex-center"> Loading... </div>;
   }
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  const [icons, setIcons] = useState(props.icons);
+  const [editIcon, setEditIcon] = useState(null);
 
-  
-  const data = props.techs.map((tech) => {
+  const [techs, setTechs] = useState(props.techs);
+  const [editTech, setEditTech] = useState(null);
+
+  const data = techs.map((tech) => {
     return {
-      // value: tech.value,
-      // text: tech.text,
       tech: tech,
-      icons: props.icons.filter((icon) => icon.category === tech.value),
+      iconss: icons.filter((icon) => icon.category === tech.value),
     };
   });
 
@@ -46,7 +47,6 @@ export default function Techs(props: {
 				justify-content: center;
 				align-items: start;
 				margin-top: 50px;
-        margin-bottom: -50px;
 			}
 			.text-desc {
 					max-width: 200px;
@@ -68,36 +68,38 @@ export default function Techs(props: {
       </style>
       <div className="chapter">
         <h1 className="title bullet-bar">Technologies</h1>
-        <div className="flex-grid flex-center">
-          {data.map(({ tech, icons }, index) => (
+        <div className="flex-grid flex-center" style={{marginBottom:'100px'}}>
+
+          {data.map(({ tech, iconss }, index) => (
             <div className="grid-column flex-column" key={index}>
-              <Fade triggerOnce delay={index * 100}>
+              <Fade triggerOnce delay={index*100} direction='up'>
               <div>
-              <div onClick={() => setSelectedTech(tech)}>
-              <h2 className="title-overview"> {tech.value} </h2>
-              <p className="text-desc"> {tech.text} </p>
-              </div>
-              {isAuthenticated && selectedTech === tech ? (
-                <EditTech tech={tech} setTech={setSelectedTech} />
+                <div onClick={() => setEditTech(tech)}>
+                <h2 className="title-overview"> {tech.value} </h2>
+                <p className="text-desc"> {tech.text} </p>
+                </div>
+
+              {isAuthenticated && editTech === tech ? (
+                <EditTech editTech={tech} setEditTech={setEditTech} techs={techs} setTechs={setTechs} />
               ) : null}
               </div>
               
-              {icons.map((icon, index) => (
+              {iconss.map((icon, index) => (
                 <div className="flex-row" key={index}>
-                <div className="flex-row" onClick={() => setSelectedIcon(icon)}>
-                  <Devicon
-                    img_link={icon.img_link}
-                    border_color={icon.border_color}
-                    name={icon.name}
-                  />
+                  <div className="flex-row" onClick={() => setEditIcon(icon)}>
+                    <Devicon
+                      img_link={icon.img_link}
+                      border_color={icon.border_color}
+                      name={icon.name}
+                    />
+                  </div>
 
-                </div>
-                  {isAuthenticated && selectedIcon === icon ? (
-                      <EditIcon icon={icon} setIcon={setSelectedIcon}/>
-                  ) : null}
+                  {isAuthenticated && editIcon === icon ? (
+                    <EditIcon editIcon={icon} setEditIcon={setEditIcon} icons={icons} setIcons={setIcons} />
+                    ) : null}
                 </div>
               ))}
-              </Fade>
+          </Fade>
             </div>
           ))}
         </div>

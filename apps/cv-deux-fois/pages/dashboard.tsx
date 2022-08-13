@@ -7,9 +7,10 @@ import EditIcon from "../components/edit-icon";
 
 
 
-export default function Dashboard ({techs, icons, projects}) {
+export default function Dashboard (props: {techs, icons, projects}) {
   const { user, isAuthenticated, isLoading } = useAuth0();
-  const [selectedIcon, setSelectedIcon] = useState(null);
+  const [editIcon, setEditIcon] = useState(null);
+  const [icons, setIcons] = useState(props.icons);
   
 
   if (isLoading) {
@@ -27,15 +28,15 @@ export default function Dashboard ({techs, icons, projects}) {
         <div className="flex-row flex-center">
           {icons.map((icon, index) => (
             <div className="flex-row" key={index}>
-            <div className="flex-column" onClick={() => setSelectedIcon(icon)}>
+            <div className="flex-column" onClick={() => setEditIcon(icon)}>
                 <Devicon 
                     img_link={icon.img_link}
                     border_color={icon.border_color}
                     name={icon.name}
                 />
             </div>
-            {selectedIcon === icon ? (
-                <EditIcon icon={icon} setIcon={setSelectedIcon}/>
+            {editIcon === icon ? (
+                <EditIcon editIcon={icon} setEditIcon={setEditIcon} icons={icons} setIcons={setIcons} />
             ) : null}
             </div>
           ))}
