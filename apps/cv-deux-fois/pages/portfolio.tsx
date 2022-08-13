@@ -38,7 +38,7 @@ export default function Portfolio(props : {
 				return (
 					<div key={project.name} >
 					<div onClick={() => setEditProject(project)}>
-					<Fade triggerOnce delay={iproject*100} cascade direction='up'>
+					<Fade triggerOnce delay={iproject*50} cascade direction='up'>
 						<Project
 							key={project._id}
 							project={project}
