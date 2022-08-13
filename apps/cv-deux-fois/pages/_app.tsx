@@ -21,8 +21,8 @@ function App({ Component, pageProps }: AppProps) {
     <Auth0Provider
     domain="dev-s4knuldn.us.auth0.com"
     clientId="qUbMSzjUSqD7cXXefbdHQRlspYe9nMxT"
-    redirectUri={'http://localhost:4200/'}
-    // redirectUri={'https://web-cv-nine.vercel.app/'}
+    // redirectUri={'http://localhost:4200/'}
+    redirectUri={'https://web-cv-nine.vercel.app/'}
     >
       <Head>
         <title>DeuxFois</title>
