@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Devicon from '../../components/devicon';
 import EditIcon from "../../components/edit-icon";
 import EditTech from "../../components/edit-techs";
-
+import { Fade } from "react-awesome-reveal";
 const handleClick = (icon, icons) => {
   const response = fetch('/api/icons', {
     method: 'DELETE',
@@ -71,6 +71,7 @@ export default function Techs(props: {
         <div className="flex-grid flex-center">
           {data.map(({ tech, icons }, index) => (
             <div className="grid-column flex-column" key={index}>
+              <Fade triggerOnce delay={index * 100}>
               <div>
               <div onClick={() => setSelectedTech(tech)}>
               <h2 className="title-overview"> {tech.value} </h2>
@@ -96,6 +97,7 @@ export default function Techs(props: {
                   ) : null}
                 </div>
               ))}
+              </Fade>
             </div>
           ))}
         </div>
