@@ -16,7 +16,7 @@ export default function EditTech(props : {
 
     return (
     <div className="glass-overlay" >
-        <div className="edit-container flex-column flex-center center-y">
+        <div className="edit-container flex-column ">
         <button className="close" onClick={() => props.setEditTech(null)}>×</button>
             <h2 className="title-overview"> {tech.value} </h2>
               <p className="text-desc"> {tech.text} </p>

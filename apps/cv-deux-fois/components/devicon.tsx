@@ -7,7 +7,7 @@ export default function Devicon(props: {
 
 
     return (
-        <>
+        <div className="devicon"  style={{ borderColor: props.border_color }} >
             <style
                 dangerouslySetInnerHTML={{
                 __html: `
@@ -37,13 +37,12 @@ export default function Devicon(props: {
                 `,
                 }}
             />
-            <div className="devicon"  style={{ borderColor: props.border_color }} >
-                {props.img_link !== undefined && props.img_link !== "" ? (
-                <Image src={props.img_link} className="img-devicon" alt="devicon" width={25} height={25}  />
-                ) : null}
-                <p className='devicon-content link'>{props.name}</p>
+        
+            {props.img_link !== undefined && props.img_link !== "" ? (
+            <Image src={props.img_link} className="img-devicon" alt="devicon" width={25} height={25}  />
+            ) : null}
+            <p className='devicon-content link'>{props.name}</p>
                 
-            </div>
-        </>
+        </div>
   );
 }

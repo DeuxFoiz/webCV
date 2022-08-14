@@ -4,15 +4,17 @@
     background: var(--bg-trigger);
     border-radius: 5px;
 
-    z-index: 3;
+
     overflow: scroll;
     top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+
     box-shadow: var(--shadow-color);
     overflow: hidden;
     padding: 1rem;
 
+}
+.tech > * {
+    z-index: -1;
 }
 .center-y {
 

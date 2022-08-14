@@ -1,8 +1,11 @@
+import { lazy, Suspense } from 'react';
 import  Intro  from './index/intro';
-import Techs from './index/techs';
+
 import { Fade } from "react-awesome-reveal";
-import { useState, useEffect, useCallback } from 'react';
-import Portfolio from './portfolio';
+
+const Techs = lazy (() => import('./index/techs'));
+const Portfolio = lazy (() => import('./portfolio'));
+
 export async function getServerSideProps() {
     // const port = process.env.PORT || 4200;
     // const techs = await fetch(`http://localhost:${port}/api/techs`).then(res => res.json());
@@ -27,8 +30,10 @@ export default function Index({techs, icons, projects}) {
     return (
     <>
         <Intro />
+        <Suspense>
         {techs && <Techs techs={techs} icons={icons}/>}
         <Portfolio projects={projects} icons={icons}/>
+        </Suspense>
     </>
     );
 }

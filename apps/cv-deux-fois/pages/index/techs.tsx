@@ -20,25 +20,18 @@ export default function Techs(props: {
   techs: any[];
   icons: any[];
 }) {
-  if (!props.techs || !props.icons) {
+  if (!props.techs || !props.icons)
     return <div className="chapter flex-column flex-center"> Loading... </div>;
-  }
-  const { user, isAuthenticated, isLoading } = useAuth0();
-  const [icons, setIcons] = useState(props.icons);
-  const [editIcon, setEditIcon] = useState(null);
 
-  const [techs, setTechs] = useState(props.techs);
-  const [editTech, setEditTech] = useState(null);
-
-  const data = techs.map((tech) => {
+  const data = props.techs.map((tech) => {
     return {
       tech: tech,
-      iconss: icons.filter((icon) => icon.category === tech.value),
+      iconss: props.icons.filter((icon) => icon.category === tech.value),
     };
   });
 
   return (
-    <>
+    <div className="chapter">
       <style>
         {`
 			.flex-grid {
@@ -66,44 +59,27 @@ export default function Techs(props: {
 
 		`}
       </style>
-      <div className="chapter">
-        <h1 className="title bullet-bar">Technologies</h1>
-        <div className="flex-grid flex-center" style={{marginBottom:'100px'}}>
-
-          {data.map(({ tech, iconss }, index) => (
-            <div className="grid-column flex-column" key={index}>
-              <Fade triggerOnce delay={index*100} direction='up'>
-              <div>
-                <div onClick={() => setEditTech(tech)}>
-                <h2 className="title-overview"> {tech.value} </h2>
-                <p className="text-desc"> {tech.text} </p>
-                </div>
-
-              {isAuthenticated && editTech === tech ? (
-                <EditTech editTech={tech} setEditTech={setEditTech} techs={techs} setTechs={setTechs} />
-              ) : null}
+      <h1 className="title bullet-bar">Technologies</h1>
+      <div className="flex-grid flex-center" style={{marginBottom:'100px'}}>
+        {data.map(({ tech, iconss }, index) => (
+          <div key={tech.value}>
+            <Fade triggerOnce delay={index*100} direction='up'>
+              <h2 className="title-overview"> {tech.value} </h2>
+              <p className="text-desc"> {tech.text} </p>
+            
+            {iconss.map((icon, index) => (
+              <div key={icon._id}>
+                <Devicon
+                  img_link={icon.img_link}
+                  border_color={icon.border_color}
+                  name={icon.name}
+                />
               </div>
-              
-              {iconss.map((icon, index) => (
-                <div className="flex-row" key={index}>
-                  <div className="flex-row" onClick={() => setEditIcon(icon)}>
-                    <Devicon
-                      img_link={icon.img_link}
-                      border_color={icon.border_color}
-                      name={icon.name}
-                    />
-                  </div>
-
-                  {isAuthenticated && editIcon === icon ? (
-                    <EditIcon editIcon={icon} setEditIcon={setEditIcon} icons={icons} setIcons={setIcons} />
-                    ) : null}
-                </div>
-              ))}
-          </Fade>
-            </div>
-          ))}
+            ))}
+            </Fade>
+          </div>
+        ))}
         </div>
-      </div>
-    </>
+    </div>
   );
 }

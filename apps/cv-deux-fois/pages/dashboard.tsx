@@ -3,9 +3,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Login from "./auth/login";
 import Devicon from "../components/devicon";
 import EditIcon from "../components/edit-icon";
-
-
-
+import Techs from "./index/techs";
+import Portfolio from "./portfolio";
 
 export default function Dashboard (props: {techs, icons, projects}) {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -19,6 +18,7 @@ export default function Dashboard (props: {techs, icons, projects}) {
 
   return (
     isAuthenticated ? (
+    <>
     <div className="chapter flex-column flex-center">
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
@@ -42,6 +42,9 @@ export default function Dashboard (props: {techs, icons, projects}) {
           ))}
         </div>
     </div>
+            {props.techs && <Techs techs={props.techs} icons={icons}/>}
+            <Portfolio projects={props.projects} icons={icons}/>
+    </>
     ) : (
       <Login />
     )
@@ -62,11 +65,11 @@ export async function getServerSideProps() {
     const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
 
     return {
-        props: {
-            techs: techs.data,
-            icons: icons.data,
-            projects: projects.data
-        }
+      props: {
+        techs: techs.data,
+        icons: icons.data,
+        projects: projects.data
+    }
     }
 
 }

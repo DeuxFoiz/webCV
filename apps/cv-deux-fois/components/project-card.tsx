@@ -20,31 +20,27 @@ export default function Project(props : {
     
     const devicons = props.icons.filter((icon) => { return props.project.icons.includes(icon.name) });
     return (
-        <div className="flex-center project-item shadow-container" >
-            <div className="flex-row flex-center  "> 
-                <div className="flex-column flex-center">
-                    <Image src={props.project.image} width={375} height={250} alt={props.project.name} style={{borderRadius:'1%'}} />
-                    <h3 className="subtitle" style={ { marginTop:'1rem', marginLeft:'0'}}>{props.project.name}</h3>
-                    <div className="flex-row flex-center" >
-                        {            
-                        devicons.map((devicon, index) => {
-                            return (devicon === null || devicon === undefined ? null : 
-                            <div key={index} className="flex-column">
-                                <Devicon
-                                    img_link={devicon.img_link}
-                                    border_color={devicon.border_color}
-                                    name={devicon.name}
-                                />
-                            </div>)
-                        })}
-                    </div>
-                </div>
+        <div className="flex-center flex-column project-item shadow-container" >
+            <div style={ { marginTop:'-20px' } }>
+             <Image src={props.project.image} width={375} height={250} alt={props.project.name} style={{borderRadius:'1%'}} />
             </div>
-            <div className="antiflex flex-center " style={ { marginTop:'20px'}}>  
+            <h3 className="subtitle" style={ { marginTop:'1rem', marginLeft:'0'}}>{props.project.name}</h3>
+            <div className="flex-row flex-center" >
+                {            
+                devicons.map((devicon, index) => {
+                    return (devicon === null || devicon === undefined ? null : 
+                    <div key={index} className="flex-column">
+                        <Devicon
+                            img_link={devicon.img_link}
+                            border_color={devicon.border_color}
+                            name={devicon.name}
+                        />
+                    </div>)
+                })}
+            </div>
                 <div className="text"  style={{maxWidth:'100%', margin:"1rem"}}
                 dangerouslySetInnerHTML={{ __html: props.project.description }}>
                 </div>
-            </div>
         </div>
 
     );

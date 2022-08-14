@@ -7,16 +7,11 @@ import { Fade } from "react-awesome-reveal";
 export default function Portfolio(props : {
 	  projects: any[];
 	  icons: any[];
-}) {
-	if (!props.projects || !props.icons) {
+}) {	
+	if (!props.projects || !props.icons)
 		return <div className="chapter flex-column flex-center"> Loading... </div>;
-	  }
-	const { user, isAuthenticated, isLoading } = useAuth0();
-	
-	const [projects, setProjects] = useState(props.projects);
-	const [editProject, setEditProject] = useState(null); 
-
-	const projectsByDate = projects.reduce((acc, project) => {
+	  
+	const projectsByDate = props.projects.reduce((acc, project) => {
 		const date = project.date;
 		if (!acc[date]) acc[date] = [];
 		acc[date].push(project);
@@ -27,38 +22,24 @@ export default function Portfolio(props : {
 	return (
 	<div className="chapter portfolio">
 		<h1 className="title bullet-bar">Portfolio</h1>
-
-		
 		{dates.map((date, idate) => {
 		return (
 			<div key={idate}>
 			<h2 className="subtitle antiflex flex-center" style={ { paddingTop:'0'}}> {date} </h2>
 			<div className="flex-row flex-center container">
+				<Fade triggerOnce cascade duration={250}>
 				{projectsByDate[date].reverse().map((project, iproject) => {
 				return (
 					<div key={project.name} >
-					<div onClick={() => setEditProject(project)}>
-					<Fade triggerOnce delay={iproject*50} cascade direction='up'>
 						<Project
 							key={project._id}
 							project={project}
 							icons={props.icons}
 						/>
-					</Fade>
-					</div>
-					{isAuthenticated && editProject == project &&
-					 <EditProject 
-					 	project={project} 
-						setProject={setEditProject}
-						icons={props.icons}
-						projects={props.projects}
-						setProjects={setProjects}
-					/>
-					}
-					
 					</div>
 				);
-				})}
+			})}
+			</Fade>			
 			</div>
 			</div>
 		);
