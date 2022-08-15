@@ -17,7 +17,8 @@ export default function EditIcon(props : {
     const [icon, setIcon] = useState(props.editIcon);
 
     return (
-    <div className="glass-overlay">
+        <>
+    <div className="glass-overlay" onClick={() => props.setEditIcon(null)}/>
         <div className="edit-container flex-column flex-center center-y">
             <button className="close" onClick={() => props.setEditIcon(null)}>×</button>
             <Devicon
@@ -52,7 +53,7 @@ export default function EditIcon(props : {
             <button className="submit" type="submit" value="Submit">Submit</button>  
             </form>
         </div>
-    </div>
+    </>
     )
 }
 

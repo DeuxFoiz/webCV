@@ -15,7 +15,8 @@ export default function EditTech(props : {
     const [tech, setTech] = useState(props.editTech);
 
     return (
-    <div className="glass-overlay" >
+        <>
+    <div className="glass-overlay" onClick={() => props.setEditTech(null)}/>
         <div className="edit-container flex-column ">
         <button className="close" onClick={() => props.setEditTech(null)}>×</button>
             <h2 className="title-overview"> {tech.value} </h2>
@@ -38,8 +39,7 @@ export default function EditTech(props : {
                 <button className="submit" type="submit">Submit</button>
             </form>
         </div>
-    </div>
-
+    </>
     )
 }
 

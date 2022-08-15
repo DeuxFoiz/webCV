@@ -9,8 +9,8 @@ export default function Welcome(props : {
     isExpanded : boolean,
 }) {
     return (
-    <div className={`flex-column flex-center overview ${props.isExpanded ? "expanded" : "hidden"}`}>
-        <h1 className='welcome-tile '>DeuxFois</h1>
+    <div className={`flex-column flex-center overview `}>
+        <h1 className='welcome-tile'>DeuxFois</h1>
         <p className='bio'>Bonjour<span role='img' aria-label="Bonjour et bienvenue">👋🏻</span>et bienvenue <br/> 
         Je suis un étudiant Vannetais passionné
             <br/>

@@ -1,8 +1,5 @@
 import {useState} from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import Devicon from '../../components/devicon';
-import EditIcon from "../../components/edit-icon";
-import EditTech from "../../components/edit-techs";
 import { Fade } from "react-awesome-reveal";
 const handleClick = (icon, icons) => {
   const response = fetch('/api/icons', {

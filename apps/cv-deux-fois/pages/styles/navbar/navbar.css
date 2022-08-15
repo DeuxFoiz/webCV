@@ -1,5 +1,5 @@
 
-.navigation-menu, header {
+.navigation-menu {
   font-family: var(--bs-font-monospace);
   display: flex;
   flex-direction: column;
@@ -7,10 +7,17 @@
   position: fixed;
   height: 100vh;
   width: 280px;
+  top:300px;
   background: var(--card-color);
   color: var(--btn-color);
   padding-top: 20px;
   z-index: 2;
+}
+.welcome-menu {
+  width: 280px;
+  background: var(--card-color);
+  color: var(--btn-color);
+  position: fixed;
 }
 .pdp {
   max-width: 160px;
@@ -22,14 +29,6 @@
   font-size: 0.875rem;
 }
 
-
-.navigation-menu ul {
-  padding: 0;
-  margin: 0;
-}
-.navigation-menu li {
-  list-style-type: none;
-}
 .navigation-menu nav div {
   font-weight: bold;
   color: var(--btn-color);
@@ -37,15 +36,11 @@
   display: block;
   cursor: pointer;
 }
-.navigation-menu nav div:hover {
-  color: rgba(0,0,0,0.5);
+.navigation-menu li {
+  list-style-type: none;
 }
-
-.hamburger {
-  display: none;
-}
-.hamburger svg {
-  fill: var(--btn-color);
+.active {
+  color: rgba(0,0,0,0.5) !important;
 }
 
 .hireMe {
@@ -60,115 +55,54 @@
   font-size: 0.875rem;
 
 }
-@media screen and (min-width: 1250px) {
-  .hireMe {
-    margin-top: 10px;
-    margin-left: 10px;
-  }
+
+.hamburger {
+  display: none;
+}
+.hamburger svg {
+  fill: var(--btn-color);
 }
 
 
-
-
-
-
-
 @media screen and (max-width: 1250px) {
-  .little-screen-hidden{
-    display: none;
+  .navigation-menu, header  {
+    position: fixed;
+    top:auto;
+    bottom: 0;
+    height: auto;
+    padding-top: 20px;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 0;
+    z-index: 2;
   }
-}
-
-@media screen and (max-width: 1250px) {
-  #nav-links :nth-child(3) {
-    margin-right:10px;
+  .welcome-menu {
+    bottom: 120px;
+    width: 100%;
   }
-  #nav-links :nth-child(2) {
-    margin-right: 100px;
-  }
-  .hidden {
-    display: none;
-    height: 0;
-  }
+  
   .navigation-menu ul {
     justify-content: space-around;
     padding: 0 20px;
+    width: 100vw;
   }
+
   .hamburger {
     margin-bottom: 10px;
     display: block;
     z-index: 2;
   }
-  .btn {
-    order: 1;
-  }
-  nav {
-    order: 2;
-    width: 100%;
-  }
 
-  .navigation-menu, header  {
-    position: fixed;
-    bottom: 0;
-    height: auto;
-    padding-top: 20px;
-    width: 100%;
-    margin-bottom: 0;
-
+  .little-screen-hidden{
+    display: none;
   }
-  .hireMe {
-    margin-bottom: 5px;
+  .close {
+    display: none;
   }
-  .arrow-icon {
-    margin-bottom: 10px;
-  }
-
-  .expanded {
-    z-index: 1;
-    height: auto;
-  }
-
-
-  nav {
-    order: 0;
-  }
-  .overview {
-    order: 1;
-  }
-  .navigation-menu .expanded {
-    order: 0;
-    margin-bottom: 0px;
-  }
-  
-  .navigation-menu li a svg {
-    width: 1.3rem;
-    height: 1.3rem;
-    position: relative;
-    top: -1rem;
-    left: 50%;
-    margin-top:5px;
-  }
-  .navigation-menu li a {
-    font-size: 0.875rem;
-    padding: 0 0.825em 0 0;
-  }
-  .hireMe {
-    margin-top: 0;
-  }
-  /* .overview {
-    margin-left: 150px;
-
-  } */
 }
 
 
 @media screen and (max-width: 768px) {
-  .hamburger {
-    margin: 0;
-  }
-  .navigation-menu ul  {
-    padding: 0;
-  }
   .navigation-menu nav div {
     font-size: 0.6rem;
       display: flex;
@@ -176,13 +110,6 @@
 
       padding: 0.1rem 0rem;
   }	
-
-  #nav-links :nth-child(2) {
-    margin:0px;
-  }
-  #nav-links :nth-child(3) {
-    margin:0px;
-  }
   .navigation-menu nav div svg {
     margin-bottom: 10px;
     margin-left: 50%;
@@ -196,33 +123,116 @@
   .hireMe svg {
     margin-left: 25px !important;
   }
-
-  .overview {
-    margin-left: 0;
-  }
 }
 
 
-/* @media screen and (max-width: 768px) {
-  .navigation-menu nav div {
-    line-height: 0;
-    font-size: 0;
-    justify-content: space-around;
-    padding: 0;
-  }	
-  .hireMe {
 
-    height: 40px;
-    position: relative;
-    left: -10px;
+.closed {
+  display: none;
+}
+.closing {
+  -webkit-animation: scale-out-ver-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: scale-out-ver-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+.expanding {
+  webkit-animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.navigation-menu nav div:hover {
+	-webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
+	        animation: pulsate-bck 0.5s ease-in-out infinite both;
+}
+ @-webkit-keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
-  .hireMe svg {
-    padding-left: 15px;
-    padding-top: 10px;
-    
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
   }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 
-  .overview {
-    margin-left: 0;
+@-webkit-keyframes scale-in-ver-bottom {
+0% {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  opacity: 1;
+}
+100% {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  opacity: 1;
+}
+}
+@keyframes scale-in-ver-bottom {
+0% {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  opacity: 1;
+}
+100% {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  opacity: 1;
+}
+}
+
+@-webkit-keyframes scale-out-ver-bottom {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
   }
-} */
+  100% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+}
+@keyframes scale-out-ver-bottom {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+}

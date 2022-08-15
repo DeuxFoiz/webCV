@@ -1,12 +1,13 @@
 import Link from 'next/link'
+import { useState, useEffect } from 'react';
 
 export default function MenuNav() {
     return (
     <nav>
-        <ul className='flex expanded' id='nav-links'>
+        <ul className='flex ' id='nav-links'>
                 <li>
                 <Link href="/">
-                <div>
+                <div id="home" className='active'>
                     <svg className="svg-inline" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z" data-darkreader-inline-fill=""></path></svg>
                     Accueil
                 </div>  
@@ -14,7 +15,7 @@ export default function MenuNav() {
                 </li>
                 <li>
                 <Link href="/portfolio">
-                <div>
+                <div id="portfolio">
                     <svg className="svg-inline" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="laphrefp-code" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M128 96h384v256h64V80C576 53.63 554.4 32 528 32h-416C85.63 32 64 53.63 64 80V352h64V96zM624 384h-608C7.25 384 0 391.3 0 400V416c0 35.25 28.75 64 64 64h512c35.25 0 64-28.75 64-64v-16C640 391.3 632.8 384 624 384zM365.9 286.2C369.8 290.1 374.9 292 380 292s10.23-1.938 14.14-5.844l48-48c7.812-7.813 7.812-20.5 0-28.31l-48-48c-7.812-7.813-20.47-7.813-28.28 0c-7.812 7.813-7.812 20.5 0 28.31l33.86 33.84l-33.86 33.84C358 265.7 358 278.4 365.9 286.2zM274.1 161.9c-7.812-7.813-20.47-7.813-28.28 0l-48 48c-7.812 7.813-7.812 20.5 0 28.31l48 48C249.8 290.1 254.9 292 260 292s10.23-1.938 14.14-5.844c7.812-7.813 7.812-20.5 0-28.31L240.3 224l33.86-33.84C281.1 182.4 281.1 169.7 274.1 161.9z" data-darkreader-inline-fill=""></path></svg>
                     Portfolio
                 </div>

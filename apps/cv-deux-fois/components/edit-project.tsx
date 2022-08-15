@@ -30,8 +30,9 @@ export default function EditProject(props : {
     const [project, setProject] = useState(props.project);
 
     return (
-        <div className="glass-overlay">
-            <div className="edit-container">
+        <>
+        <div className="glass-overlay" onClick={() => props.setProject(null)}/>
+            <div className="edit-container flex-column">
                 <button className="close" onClick={() => props.setProject(null)}>×</button>
                 <div className="top-spaced antiflex" style={{"margin": "4em"}}>
                     <Project project={project} icons={props.icons}/>
@@ -75,7 +76,7 @@ export default function EditProject(props : {
                 </form>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 

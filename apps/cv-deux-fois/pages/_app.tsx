@@ -1,7 +1,6 @@
 import { Auth0Provider } from "@auth0/auth0-react";
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import Navbar from './navbar';
 import './styles/global.css';
 import './styles/themes.css';
 import './styles/navbar/navbar.css';
@@ -28,10 +27,6 @@ function App({ Component, pageProps }: AppProps) {
         <title>DeuxFois</title>
         <link rel="shortcut icon" href="/favico.ico" />
       </Head>
-      <header>
-      <Navbar/>
-      </header>
-
       <main className="app">
           <Component {...pageProps} />   
       </main>

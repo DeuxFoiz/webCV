@@ -2,7 +2,62 @@ import  Intro  from './index/intro';
 import Portfolio from './portfolio';
 import Techs from './index/techs';
 import handleViewport from 'react-in-viewport';
-import { forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
+import Navbar from './navbar';
+
+const handleInSection = (section) => {
+    const navbar = document.querySelector(section);
+    navbar.classList.add('active');
+}
+
+const handleOutSection = (section) => {
+    const navbar = document.querySelector(section);
+    navbar.classList.remove('active');
+}
+
+
+
+export default function Index({techs, icons, projects}) {
+    const Portfolioblock = (props: { inViewport: boolean, forwardedRef: any }) => {
+        const { inViewport, forwardedRef } = props;
+        const [isVisible, setIsVisible] = useState(false);
+        if (inViewport && !isVisible) {
+            setIsVisible(true);
+        }
+        return (
+            <div ref={forwardedRef} style={{marginTop:"-300px", height:"fit-content"}}>
+                {isVisible ? <Portfolio projects={projects} icons={icons} /> : null}
+            </div>
+        );
+    };
+    const Homeblock = (props: { inViewport: boolean, forwardedRef: any }) => {
+        const { inViewport, forwardedRef } = props;
+        return (
+            <div ref={forwardedRef}>
+                <Intro />
+            </div>
+        );
+    };
+
+  
+
+    const ViewportPortfolio = handleViewport(Portfolioblock, { rootMargin: '-150px 0px' });
+    const ViewportHome = handleViewport(Homeblock);
+    return (
+    <>
+        <header>
+            <Navbar />
+        </header>
+        <ViewportHome onEnterViewport={() => {handleInSection('#home')}} onLeaveViewport={() => {handleOutSection('#home')}}/>
+        {techs && <Techs techs={techs} icons={icons}/>}
+        <ViewportPortfolio  onEnterViewport={() => {handleInSection('#portfolio')}} onLeaveViewport={() => {handleOutSection('#portfolio')}} />
+        {/* <Portfolio projects={projects} icons={icons}/> */}
+    </>
+    );
+}
+
+
+
 
 export async function getServerSideProps() {
     // const port = process.env.PORT || 4200;
@@ -23,30 +78,3 @@ export async function getServerSideProps() {
     }
 
 }
-
-export default function Index({techs, icons, projects}) {
-    const Block = (props: { inViewport: boolean, forwardedRef: any }) => {
-        const { inViewport, forwardedRef } = props;
-        const color = inViewport ? '#217ac0' : '#ff9800';
-        const text = inViewport ? 'In viewport' : 'Not in viewport';
-        return (
-            <div ref={forwardedRef} style={{backgroundColor: color, marginTop:"-150px", height:"fit-content"}}>
-                {inViewport ? <Portfolio projects={projects} icons={icons} /> : null}
-            </div>
-        );
-    };
-  
-
-    const ViewportBlock = handleViewport(Block);
-    return (
-    <>
-        <Intro />
-        {techs && <Techs techs={techs} icons={icons}/>}
-        <ViewportBlock onEnterViewport={() => console.log('enter')} onLeaveViewport={() => console.log('leave')} />
-        {/* <Portfolio projects={projects} icons={icons}/> */}
-    </>
-    );
-}
-
-
-
