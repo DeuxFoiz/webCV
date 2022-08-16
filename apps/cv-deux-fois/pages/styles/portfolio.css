@@ -1,5 +1,6 @@
 .portfolio {
-    margin-top: 200px;;
+    position: relative;
+    top : 250px;
 }
 .project-image {
     border-radius: 5%;

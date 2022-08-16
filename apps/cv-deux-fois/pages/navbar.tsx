@@ -15,8 +15,10 @@ export default function Navbar(){
 
     return (
       <>
+          <div className={isExpanded ? 'opened' : 'closed'}>
+            <SwitchDarkMode/>
+          </div>
         <div className={ isExpanded ? "welcome-menu expanding" : firstUpdate.current ? "welcome-menu closed" : "welcome-menu closing"}>
-        < SwitchDarkMode/>
           <Welcome isExpanded={isExpanded} />
           
           <hr className="separator little-screen-hidden"></hr>
@@ -31,6 +33,8 @@ export default function Navbar(){
             </div>
           </div>
           <MenuNav />
+          <hr className="separator little-screen-hidden"></hr>
+
           <div className={isExpanded ? "flex expanded" : "flex hidden"}>
             
           </div>

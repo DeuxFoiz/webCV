@@ -57,7 +57,7 @@ export default function Techs(props: {
 		`}
       </style>
       <h1 className="title bullet-bar">Technologies</h1>
-      <div className="flex-grid flex-center" style={{marginBottom:'100px'}}>
+      <div className="flex-grid flex-center">
         {data.map(({ tech, iconss }, index) => (
           <div key={tech.value}>
             <Fade triggerOnce delay={index*100} direction='up'>
