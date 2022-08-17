@@ -25,7 +25,7 @@ export default function Portfolio(props : {
 			<div key={idate}>
 				<h2 className="subtitle antiflex flex-center" style={ { paddingTop:'0'}}> {date} </h2>
 				<div className="flex-row flex-center container">
-					<Fade triggerOnce cascade duration={400}>
+					<Fade triggerOnce cascade duration={400} direction='left'>
 					{projectsByDate[date].reverse().map((project, iproject) => {
 					return (
 					
