@@ -1,6 +1,7 @@
 import { Auth0Provider } from "@auth0/auth0-react";
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+
 import './styles/global.css';
 import './styles/themes.css';
 import './styles/navbar/navbar.css';
@@ -16,7 +17,6 @@ if (!SSR) document.documentElement.setAttribute('data-theme', 'light')
 
 
 function App({ Component, pageProps }: AppProps) {
-  console.log("APP");
   return (
     <Auth0Provider
     domain="dev-s4knuldn.us.auth0.com"
