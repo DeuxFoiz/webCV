@@ -37,7 +37,7 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div id='portfolio' ref={forwardedRef} style={{marginTop:"-150px",height:"fit-content", minHeight:'1000px'}}>
+            <div id='portfolio' ref={forwardedRef} style={{marginTop:"-50px",height:"fit-content", minHeight:'1000px'}}>
                 <Portfolio projects={projects} icons={icons} isVisible={isVisible}/>
             </div>
         );
