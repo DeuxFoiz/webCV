@@ -72,7 +72,7 @@ export default function Index({techs, icons, projects}) {
         return (
             <div id='cv' className='chapter' style={{ marginTop:'100px',overflow:'hidden'}}>
             <h1 className="title bullet-bar">Curriculum Vitae</h1>
-            <div className='cv' ref={forwardedRef} style={{minWidth:'400px',overflow:'hidden'}}>
+            <div className='cv' ref={forwardedRef} style={{minWidth:'360px',overflow:'hidden'}}>
                 <Image src="/assets/img/cv2.webp" alt="cv" width={707} height={980} layout="responsive" style={{marginLeft:'50%', translate:'translate(-50%, 0)'}} />
 
             </div>
