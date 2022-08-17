@@ -152,6 +152,7 @@
   .hireMe {
     height: 35px;
     margin-top: 5px;
+    margin-bottom: 10px;
   }
   .hireMe svg {
     margin-left: 25px !important;

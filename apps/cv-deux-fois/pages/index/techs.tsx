@@ -62,10 +62,10 @@ export default function Techs(props: {
           <div key={tech.value} className="grid-column">
             <Fade triggerOnce delay={index*100} direction='up'>
               <h2 className="title-overview"> {tech.value} </h2>
-              <p className="text-desc"> {tech.text} </p>
+              <p className="text-desc" style={{marginBottom:'20px'}}> {tech.text} </p>
             
             {iconss.map((icon, index) => (
-              <div key={icon._id}>
+              <div key={icon._id} style={{marginLeft:'30px', marginTop:'10px'}}>
                 <Devicon
                   img_link={icon.img_link}
                   border_color={icon.border_color}
