@@ -7,8 +7,7 @@ export default function Blog() {
 
         title="blog"
         frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen>
+        >
         </iframe>
 
     );

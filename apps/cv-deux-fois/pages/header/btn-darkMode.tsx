@@ -4,11 +4,7 @@ import { useState } from "react";
 
 export default function SwitchDarkMode() {
     const [darkMode, setDarkMode] = useState(false);
-    // useEffect(() => {
-    //     if (!SSR) document.documentElement.setAttribute('data-theme', 'light')
-    //     setDarkMode(false);
-    // }
-    // , [darkMode])
+
     return (        
         <div className="container-switch ">
         <label >

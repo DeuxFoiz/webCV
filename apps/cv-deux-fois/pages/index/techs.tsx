@@ -1,16 +1,5 @@
-import {useState} from "react";
 import Devicon from '../../components/devicon';
 import { Fade } from "react-awesome-reveal";
-const handleClick = (icon, icons) => {
-  const response = fetch('/api/icons', {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(icon._id),
-  }).then((res) => res.json());
-  return { response };
-};
 
 
 export default function Techs(props: {

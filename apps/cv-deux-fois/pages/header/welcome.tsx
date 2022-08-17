@@ -1,9 +1,3 @@
-// const H1Name = styled.h1`
-// 	font-size: 2em;
-// 	color: var(--btn-color);
-// 	text-align: center;
-// 	font-weight: bold;
-// `;
 import Image from 'next/image';
 export default function Welcome(props : {
     isExpanded : boolean,

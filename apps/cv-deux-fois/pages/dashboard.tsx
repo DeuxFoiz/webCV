@@ -1,11 +1,11 @@
 import {useState} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import Login from "./auth/login";
 import Devicon from "../components/devicon";
 import EditIcon from "../components/edit-icon";
 import EditTech from "../components/edit-techs"; 
 import Project from '../components/project-card';
 import EditProject from '../components/edit-project';
+
 export default function Dashboard (props: {techs, icons, projects}) {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [icons, setIcons] = useState(props.icons);
