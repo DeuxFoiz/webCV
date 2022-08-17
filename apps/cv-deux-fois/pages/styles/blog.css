@@ -11,13 +11,14 @@
     z-index: 1 ;
     scrollbar-width: none;
     overflow: hidden;
+    margin-left: 140px;
 }
 
-/* @media screen and (max-width: 1950px) {
+@media screen and (max-width: 1250px) {
     #blog {
-        height: 1900px;
+        margin-left: 0;
     }
-} */
+}
 
 @media screen and (max-width: 500px) {
     #blog {
