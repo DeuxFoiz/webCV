@@ -13,6 +13,7 @@ const nextConfig = {
   images: {
     domains: ['cdn.jsdelivr.net','influxdata.github.io','d33wubrfki0l68.cloudfront.net'],
   },
+  lang: 'fr',
 };
 
 module.exports = withNx(nextConfig);

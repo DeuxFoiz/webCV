@@ -3,6 +3,24 @@
 
 }
 
-h1, h2, h3, h4, h5, h6, ol, ul, thead {
-    color: var(--darkreader-text--dark);
+iframe {
+    width: 100%;
+    height: 2000px;
+    border: none;
+    margin-top: -600px;
+    z-index: 1 ;
+    scrollbar-width: none;
+    overflow: hidden;
+}
+
+/* @media screen and (max-width: 1950px) {
+    iframe {
+        height: 1900px;
+    }
+} */
+
+@media screen and (max-width: 500px) {
+    iframe {
+        height: 2200px;
+    }
 }

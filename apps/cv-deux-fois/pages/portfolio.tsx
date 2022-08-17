@@ -4,6 +4,7 @@ import { Fade } from "react-awesome-reveal";
 export default function Portfolio(props : {
 	  projects: any[];
 	  icons: any[];
+	  isVisible: boolean;
 }) {	
 	if (!props.projects || !props.icons)
 		return <div className="chapter flex-column flex-center"> Loading... </div>;
@@ -15,7 +16,7 @@ export default function Portfolio(props : {
 		return acc;
 	}, {});
 	const dates = Object.keys(projectsByDate).reverse();
-	
+
 	return (
 	<div className="chapter portfolio">
 		<h1 className="title bullet-bar">Portfolio</h1>
@@ -27,12 +28,14 @@ export default function Portfolio(props : {
 					<Fade triggerOnce cascade duration={400}>
 					{projectsByDate[date].reverse().map((project, iproject) => {
 					return (
+					
 						<div  key={project.name}>
-							<Project
+							{props.isVisible ?
+							 <Project
 								key={project._id}
 								project={project}
 								icons={props.icons}
-							/>
+							/> :  <div className="flex-column project-item shadow-container" style={{ alignItems: 'center', justifyContent: 'start' }}/>}
 						</div>
 					);
 				})}

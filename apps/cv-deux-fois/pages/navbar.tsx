@@ -5,20 +5,14 @@ import MenuNav  from './header/menu-nav';
 
 export default function Navbar(){
   const [isExpanded, setIsExpanded] = useState(false)
-  const firstUpdate = useRef(true);
-  useLayoutEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
-      return;
-    }
-  }, [isExpanded]);
+  const [firstUpdate, setFirstUpdate] = useState(true)
 
     return (
       <>
           <div className={isExpanded ? 'opened' : 'closed'}>
             <SwitchDarkMode/>
           </div>
-        <div className={ isExpanded ? "welcome-menu expanding" : firstUpdate.current ? "welcome-menu closed" : "welcome-menu closing"}>
+        <div className={ isExpanded ? "welcome-menu expanding" : firstUpdate ? "welcome-menu closed" : "welcome-menu closing"}>
           <Welcome isExpanded={isExpanded} />
           
           <hr className="separator little-screen-hidden"></hr>
@@ -26,7 +20,7 @@ export default function Navbar(){
         </div>
         <div className='navigation-menu'>
           <div className="hamburger"
-          onClick={() => {setIsExpanded(!isExpanded);}}>
+          onClick={() => {setIsExpanded(!isExpanded); firstUpdate && setFirstUpdate(false)}}>
             <div className={isExpanded ? "arrow-icon open" : "arrow-icon"}>
               <span className="left-bar" />
               <span className="right-bar" />

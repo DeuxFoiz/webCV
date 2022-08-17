@@ -3,6 +3,10 @@ import Portfolio from './portfolio';
 import Techs from './index/techs';
 import handleViewport from 'react-in-viewport';
 import { forwardRef, useState } from 'react';
+import Image from 'next/image';
+
+
+
 import Navbar from './navbar';
 import Blog from './blog';
 const handleInSection = (section) => {
@@ -23,11 +27,12 @@ const handleInSection = (section) => {
 
 
 export default function Index({techs, icons, projects}) {
+    console.log("INDOEX");
     const Homeblock = (props: { inViewport: boolean, forwardedRef: any }) => {
         const { inViewport, forwardedRef } = props;
         return (
             // <div ref={forwardedRef} style={{marginBottom: "700px", height:"fit-content"}}>
-            <div ref={forwardedRef} style={{height:"fit-content"}}>   
+            <div id='home' ref={forwardedRef} style={{height:"fit-content"}}>   
                 <Intro />
                 {techs && <Techs techs={techs} icons={icons}/>}
             </div>
@@ -35,7 +40,7 @@ export default function Index({techs, icons, projects}) {
     };
     const tmpBLock = (props: { inViewport: boolean, forwardedRef: any }) => {
         return (
-            <div ref={props.forwardedRef} style={{position:"relative", top:"800px", height:"1480px"}} />
+            <div ref={props.forwardedRef} style={{position:"relative", top:"-700px"}} />
         );
     };
     const Portfolioblock = (props: { inViewport: boolean, forwardedRef: any }) => {
@@ -45,24 +50,35 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div ref={forwardedRef} style={{marginTop:"-150px",height:"fit-content"}}>
-                {isVisible ? <Portfolio projects={projects} icons={icons} /> : null}
+            <div id='portfolio' ref={forwardedRef} style={{marginTop:"-150px",height:"fit-content", minHeight:'1000px'}}>
+                <Portfolio projects={projects} icons={icons} isVisible={isVisible}/>
             </div>
         );
     };
     const Blogblock = (props: { inViewport: boolean, forwardedRef: any }) => {
         const { inViewport, forwardedRef } = props;
-        const [isVisible, setIsVisible] = useState(false);
-        if (inViewport && !isVisible) {
-            setIsVisible(true);
-        }
         return (
-            <div ref={forwardedRef} style={{position:"relative", top:"700px"}}>
+            <div  ref={forwardedRef} style={{marginTop:"700px"}}>
                 <Blog />
             </div>
         );
     };
+    const cvBlock = (props: { inViewport: boolean, forwardedRef: any }) => {
+        const { inViewport, forwardedRef } = props;
 
+        function loaded({numPages}) {
+            console.log(numPages);
+        }
+        return (
+            <div id='cv' className='chapter' style={{ marginTop:'100px',overflow:'hidden'}}>
+            <h1 className="title bullet-bar">Curriculum Vitae</h1>
+            <div className='cv' ref={forwardedRef} style={{minWidth:'400px',overflow:'hidden'}}>
+                <Image src="/assets/img/cv2.webp" alt="cv" width={707} height={980} layout="responsive" style={{marginLeft:'50%', translate:'translate(-50%, 0)'}} />
+
+            </div>
+            </div>
+        );
+    };
   
 
     const ViewportPortfolio = handleViewport(Portfolioblock);
@@ -70,16 +86,19 @@ export default function Index({techs, icons, projects}) {
     const ViewportTmp = handleViewport(tmpBLock);
     const ViewportTmp2 = handleViewport(tmpBLock);
     const ViewportBlog = handleViewport(Blogblock);
+    const ViewportCv = handleViewport(cvBlock);
     return (
     <>
-        <header>
-            <Navbar />
-        </header>
-        <ViewportHome onEnterViewport={() => {handleInSection('#home')}} onLeaveViewport={() => {handleInSection('#portfolio')}}/>
-        {/* <ViewportTmp onEnterViewport={() => {handleInSection('#portfolio')}} /> */}
-        <ViewportPortfolio  EnterViewport={() => {handleInSection('#portfolio')}}/>
+
+        <ViewportHome onEnterViewport={() => {handleInSection('#navhome')}} onLeaveViewport={() => {handleInSection('#navportfolio')}}/>
+        <ViewportPortfolio  EnterViewport={() => {handleInSection('#navportfolio')}}/>
+        <ViewportTmp onEnterViewport={() => {handleInSection('#navportfolio')}} />
+
+        <ViewportCv onEnterViewport={() => {handleInSection('#navcv')}}/>
+
+        
         {/* <ViewportTmp2 /> */}
-        <ViewportBlog onLeaveViewport={() => {handleInSection('#portfolio')}} onEnterViewport={() => {handleInSection('#blog')}}/>
+        <ViewportBlog onLeaveViewport={() => {handleInSection('#navcv')}} onEnterViewport={() => {handleInSection('#navblog')}}/>
         {/* <Portfolio projects={projects} icons={icons}/> */}
     </>
     );

@@ -12,6 +12,7 @@
   color: var(--btn-color);
   padding-top: 10px;
   z-index: 2;
+  overflow: hidden;
 }
 .welcome-menu {
   padding-top:20px;
@@ -22,6 +23,7 @@
   position: fixed;
   height: fit-content;
   z-index: 2;
+  overflow: hidden;
 }
 .pdp {
   max-width: 160px;
@@ -70,7 +72,7 @@
 .container-switch {
   position: absolute;
   top: 650px;
-  left:90px;
+  margin-left:90px;
   z-index: 3;
 }
 
@@ -113,6 +115,7 @@
   .container-switch {
     position: absolute;
     top: -300px;
+    margin-right: 15px;;
     right:0;
     z-index: 3;
     -webkit-animation: scale-in-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s both;
@@ -227,11 +230,13 @@
             transform: translateY(0);
   }
 }
-
-.navigation-menu nav div:hover {
-	-webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
-	        animation: pulsate-bck 0.5s ease-in-out infinite both;
+@media screen and (min-width : 1250px) {
+  .navigation-menu nav div:hover {
+    -webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
+            animation: pulsate-bck 0.5s ease-in-out infinite both;
+  }
 }
+
  @-webkit-keyframes pulsate-bck {
   0% {
     -webkit-transform: scale(1);

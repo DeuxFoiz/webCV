@@ -7,14 +7,14 @@ import EditTech from "../components/edit-techs";
 import Project from '../components/project-card';
 import EditProject from '../components/edit-project';
 export default function Dashboard (props: {techs, icons, projects}) {
-  // const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
   const [icons, setIcons] = useState(props.icons);
   const [editIcon, setEditIcon] = useState(null);
   const [techs, setTechs] = useState(props.techs);
   const [editTech, setEditTech] = useState(null);
   const [projects, setProjects] = useState(props.projects);
 	const [editProject, setEditProject] = useState(null);
-  const isAuthenticated = true;
+
 
 	const projectsByDate = props.projects.reduce((acc, project) => {
 		const date = project.date;
@@ -136,14 +136,14 @@ export default function Dashboard (props: {techs, icons, projects}) {
 
 
 export async function getServerSideProps() {
-    // const port = process.env.PORT || 4200;
-    // const techs = await fetch(`http://localhost:${port}/api/techs`).then(res => res.json());
-    // const icons = await fetch(`http://localhost:${port}/api/icons`).then(res => res.json());
-    // const projects = await fetch(`http://localhost:${port}/api/projects`).then((res) => res.json());
+    const port = process.env.PORT || 4200;
+    const techs = await fetch(`http://localhost:${port}/api/techs`).then(res => res.json());
+    const icons = await fetch(`http://localhost:${port}/api/icons`).then(res => res.json());
+    const projects = await fetch(`http://localhost:${port}/api/projects`).then((res) => res.json());
 
-    const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
-    const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
-    const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
+    // const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
+    // const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
+    // const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
 
     return {
       props: {

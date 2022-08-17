@@ -1,7 +1,7 @@
 import Image from 'next/image';
 export default function Intro() {
     return (
-    <div className="chapter bg-trigger">
+    <div className="chapter bg-trigger intro">
         <h1 className="big-title">DeuxFois</h1>
         <h2 className="subtitle big-title" style = {{ margin:"0", padding:"0"}}>Etudiant en Master AIDN</h2>
             <div className='flex-row flex-center pres'>
