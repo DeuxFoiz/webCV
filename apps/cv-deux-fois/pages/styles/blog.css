@@ -5,7 +5,7 @@
 
 #blog {
     width: 100%;
-    height: 2000px;
+    height: 1600px;
     border: none;
     padding-top: -200px;
     z-index: 1 ;
@@ -16,6 +16,7 @@
 @media screen and (max-width: 1250px) {
     #blog {
         margin-left: 0;
+        height: 1900px;
     }
     .cv {
         width: 100%;
@@ -27,9 +28,33 @@
         padding: 0;
     }
 }
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1200px) {
     #blog {
-        height: 2200px;
+        height: 1500px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #blog {
+        height: 1600px;
+    }
+}
+@media screen and (max-width: 850px) {
+    #blog {
+        height: 1700px;
+    }
+}
+@media screen and (max-width: 650px) {
+    #blog {
+        height: 1800px;
+    }
+}
+@media screen and (max-width: 550px) {
+    #blog {
+        height: 1900px;
+    }
+}
+@media screen and (max-width: 450px) {
+    #blog {
+        height: 2000px;
     }
 }

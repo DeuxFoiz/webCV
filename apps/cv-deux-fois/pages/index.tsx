@@ -49,7 +49,7 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div  ref={forwardedRef} style={{marginTop:"100px"}}>
+            <div  ref={forwardedRef} >
                 {isVisible ? <Blog /> : <div id='blog'/>}
             </div>
         );
@@ -57,7 +57,7 @@ export default function Index({techs, icons, projects}) {
     const cvBlock = (props: { inViewport: boolean, forwardedRef: any }) => {
         const { inViewport, forwardedRef } = props;
         return (
-            <div id='cv' className='chapter' style={{overflow:'hidden'}}>
+            <div id='cv' className='chapter' style={{overflow:'hidden', marginBottom:'100px'}}>
             <h1 className="title bullet-bar">Curriculum Vitae</h1>
             <div className='cv' ref={forwardedRef} style={{minWidth:'360px', maxWidth:'700px', width:'95%',overflow:'hidden'}}>
                 <Image src="/assets/img/cv2.webp" alt="cv" width={707} height={980} layout="responsive" style={{marginLeft:'50%', translate:'translate(-50%, 0)'}} />
@@ -92,7 +92,7 @@ export default function Index({techs, icons, projects}) {
         <ViewportCv onEnterViewport={() => {handleInSection('#navcv')}}/>
         
         <ViewportBlog  onEnterViewport={() => {handleInSection('#navblog')}}/>
-        <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} onLeaveViewport={() => {handleInSection('#navblog')}}/>
+        <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} />
 
         
     </>
