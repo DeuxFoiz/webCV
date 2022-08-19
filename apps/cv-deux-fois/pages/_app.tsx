@@ -11,6 +11,7 @@ import './styles/navbar/btn-darkMode.css';
 import './styles/edit.css';
 import './styles/portfolio.css';
 import './styles/blog.css';
+import './styles/contact.css';
 import Navbar from './navbar';
 const SSR = typeof window === 'undefined';
 if (!SSR) document.documentElement.setAttribute('data-theme', 'light')

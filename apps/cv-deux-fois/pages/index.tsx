@@ -5,7 +5,7 @@ import handleViewport from 'react-in-viewport';
 import { useState } from 'react';
 import Image from 'next/image';
 import Blog from './blog';
-
+import Contact from './contact';
 const handleInSection = (section) => {
     const link = document.querySelectorAll('.link');
     link.forEach(item => { item.classList.remove('active'); });
@@ -49,7 +49,7 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div  ref={forwardedRef} style={{marginTop:"700px"}}>
+            <div  ref={forwardedRef} style={{marginTop:"100px"}}>
                 {isVisible ? <Blog /> : <div id='blog'/>}
             </div>
         );
@@ -57,7 +57,7 @@ export default function Index({techs, icons, projects}) {
     const cvBlock = (props: { inViewport: boolean, forwardedRef: any }) => {
         const { inViewport, forwardedRef } = props;
         return (
-            <div id='cv' className='chapter'>
+            <div id='cv' className='chapter' style={{overflow:'hidden'}}>
             <h1 className="title bullet-bar">Curriculum Vitae</h1>
             <div className='cv' ref={forwardedRef} style={{minWidth:'360px', maxWidth:'700px', width:'95%',overflow:'hidden'}}>
                 <Image src="/assets/img/cv2.webp" alt="cv" width={707} height={980} layout="responsive" style={{marginLeft:'50%', translate:'translate(-50%, 0)'}} />
@@ -65,6 +65,15 @@ export default function Index({techs, icons, projects}) {
             </div>
         );
     };
+    const Contactblock = (props: { inViewport: boolean, forwardedRef: any }) => {
+        const { inViewport, forwardedRef } = props;
+        return (
+            <div id="contact" className='chapter' ref={forwardedRef}>
+
+            <Contact />
+            </div>
+        );
+    }
   
 
     const ViewportPortfolio = handleViewport(Portfolioblock);
@@ -72,6 +81,7 @@ export default function Index({techs, icons, projects}) {
     const ViewportTmp = handleViewport(tmpBLock);
     const ViewportBlog = handleViewport(Blogblock);
     const ViewportCv = handleViewport(cvBlock);
+    const ViewportContact = handleViewport(Contactblock);
     return (
     <>
 
@@ -81,7 +91,10 @@ export default function Index({techs, icons, projects}) {
 
         <ViewportCv onEnterViewport={() => {handleInSection('#navcv')}}/>
         
-        <ViewportBlog onLeaveViewport={() => {handleInSection('#navcv')}} onEnterViewport={() => {handleInSection('#navblog')}}/>
+        <ViewportBlog  onEnterViewport={() => {handleInSection('#navblog')}}/>
+        <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} onLeaveViewport={() => {handleInSection('#navblog')}}/>
+
+        
     </>
     );
 }

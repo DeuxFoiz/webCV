@@ -70,7 +70,7 @@
 }
 
 .container-switch {
-  position: absolute;
+  position: fixed;
   top: 650px;
   margin-left:90px;
   z-index: 3;

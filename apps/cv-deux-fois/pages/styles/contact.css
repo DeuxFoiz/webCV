@@ -1,0 +1,68 @@
+.form > input,textarea {
+    width: 80%;
+    max-width: 500px;
+}
+
+/* From uiverse.io by @fanishah */
+.button {
+    font-family: inherit;
+    background: #475dc2;
+    color: white;
+    padding: 0.35em 0;
+    font-size: 17px;
+    border: none;
+    border-radius: 0.7em;
+    letter-spacing: 0.08em;
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 3em;
+    padding-left: 2.8em;
+    padding-right: 0.9em;
+    margin: 20px;
+    cursor: pointer;
+   }
+   textarea {
+       min-height: 5em;
+   }
+   .button .icon {
+    background: #fff;
+    height: 2em;
+    width: 2em;
+    border-radius: 2em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0.4em;
+    transition: all 0.5s;
+   }
+   
+   .icon svg {
+    transition: all 0.5s;
+    color: #2a5980;
+    width: 1.2rem;
+    height: 1.2rem;
+   }
+   #icon-github {
+    width: 1.5rem;
+    height: 1.5rem;   
+   }
+   #icon-linkedin {
+    width: 1.4rem;
+    height: 1.4rem;   
+   }
+    #icon-mail {
+     width: 1.5rem;
+     height: 1.5rem;   
+    }
+   .button:hover .icon svg {
+    transform: rotate(360deg);
+   }
+   
+   .button:hover .icon {
+    width: calc(100% - 0.85rem);
+    border-radius: 0.5em;
+   }
