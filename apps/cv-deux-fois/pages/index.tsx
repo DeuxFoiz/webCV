@@ -5,7 +5,6 @@ const Blog = dynamic(() => import('./blog'));
 
 import  Intro  from './index/intro';
 import Techs from './index/techs';
-import handleViewport from 'react-in-viewport';
 import { useState } from 'react';
 import Contact from './contact';
 
@@ -72,33 +71,54 @@ export default function Index({techs, icons, projects}) {
     const Contactblock = (props: { inViewport: boolean, forwardedRef: any }) => {
         const { inViewport, forwardedRef } = props;
         return (
+            <>
             <div id="contact" className='chapter' ref={forwardedRef}>
 
             <Contact />
             </div>
+
+
+        </>
         );
     }
   
 
-    const ViewportPortfolio = handleViewport(Portfolioblock);
-    const ViewportHome = handleViewport(Homeblock);
-    const ViewportTmp = handleViewport(tmpBLock);
-    const ViewportBlog = handleViewport(Blogblock);
-    const ViewportCv = handleViewport(cvBlock);
-    const ViewportContact = handleViewport(Contactblock);
+    // const ViewportPortfolio = handleViewport(Portfolioblock);
+    // const ViewportHome = handleViewport(Homeblock);
+    // const ViewportTmp = handleViewport(tmpBLock);
+    // const ViewportBlog = handleViewport(Blogblock);
+    // const ViewportCv = handleViewport(cvBlock);
+    // const ViewportContact = handleViewport(Contactblock);
     return (
     <>
 
-        <ViewportHome onEnterViewport={() => {handleInSection('#navhome')}} onLeaveViewport={() => {handleInSection('#navportfolio')}}/>
+        {/* <ViewportHome onEnterViewport={() => {handleInSection('#navhome')}} onLeaveViewport={() => {handleInSection('#navportfolio')}}/>
         <ViewportPortfolio  EnterViewport={() => {handleInSection('#navportfolio')}}/>
         <ViewportTmp onEnterViewport={() => {handleInSection('#navportfolio')}} />
 
         <ViewportCv onEnterViewport={() => {handleInSection('#navcv')}}/>
         
         <ViewportBlog  onEnterViewport={() => {handleInSection('#navblog')}}/>
-        <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} />
+        <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} /> */}
+        <div id='home' style={{height:"fit-content"}}>   
+            <Intro />
+            {techs && <Techs techs={techs} icons={icons}/>}
+        </div>
 
-        
+        <div id='portfolio'  style={{marginTop:"-50px",height:"fit-content", minHeight:'1000px'}}>
+            <Portfolio projects={projects} icons={icons} isVisible={true}/>
+        </div>
+        <Blog />   
+        <div id='cv' className='chapter' style={{overflow:'hidden', marginBottom:'100px'}}>
+            <h1 className="title bullet-bar">Curriculum Vitae</h1>
+            <div className='cv'  style={{minWidth:'360px', maxWidth:'700px', width:'95%',overflow:'hidden'}}>
+                <Image src="/assets/img/cv2.webp" alt="cv" width={707} height={980} layout="responsive" style={{marginLeft:'50%', translate:'translate(-50%, 0)'}} />
+            </div>
+            </div>
+        <div id="contact" className='chapter' >
+
+<Contact />
+</div>   
     </>
     );
 }
@@ -114,9 +134,9 @@ export async function getServerSideProps({ req, res }) {
     // const icons = await fetch(`http://localhost:${port}/api/icons`).then(res => res.json());
     // const projects = await fetch(`http://localhost:${port}/api/projects`).then((res) => res.json());
     
-    const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
-    const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
-    const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
+    // const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
+    // const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
+    // const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
   
     return {
         props: {
