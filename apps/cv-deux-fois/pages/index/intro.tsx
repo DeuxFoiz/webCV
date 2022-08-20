@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 export default function Intro() {
     return (
     <div className="chapter bg-trigger intro">

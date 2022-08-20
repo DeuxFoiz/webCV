@@ -1,4 +1,5 @@
 import Devicon from '../../components/devicon';
+import { Fade } from "react-awesome-reveal";
 
 
 export default function Techs(props: {
@@ -48,6 +49,7 @@ export default function Techs(props: {
       <div className="flex-grid flex-center">
         {data.map(({ tech, iconss }, index) => (
           <div key={tech.value} className="grid-column">
+            <Fade triggerOnce delay={index*100} direction='up'>
               <h2 className="title-overview"> {tech.value} </h2>
               <p className="text-desc" style={{marginBottom:'20px'}}> {tech.text} </p>
             
@@ -60,6 +62,7 @@ export default function Techs(props: {
                 />
               </div>
             ))}
+            </Fade>
           </div>
         ))}
         </div>
