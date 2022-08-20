@@ -1,11 +1,15 @@
+import dynamic from 'next/dynamic'
+import Image from 'next/image';
+const Portfolio = dynamic(() => import('./portfolio'));
+const Blog = dynamic(() => import('./blog'));
+
 import  Intro  from './index/intro';
-import Portfolio from './portfolio';
 import Techs from './index/techs';
 import handleViewport from 'react-in-viewport';
 import { useState } from 'react';
-import Image from 'next/image';
-import Blog from './blog';
 import Contact from './contact';
+
+
 const handleInSection = (section) => {
     const link = document.querySelectorAll('.link');
     link.forEach(item => { item.classList.remove('active'); });
@@ -100,9 +104,11 @@ export default function Index({techs, icons, projects}) {
 }
 
 
-
-
-export async function getServerSideProps() {
+export async function getServerSideProps({ req, res }) {
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59'
+      )
     // const port = process.env.PORT || 4200;
     // const techs = await fetch(`http://localhost:${port}/api/techs`).then(res => res.json());
     // const icons = await fetch(`http://localhost:${port}/api/icons`).then(res => res.json());
@@ -111,7 +117,7 @@ export async function getServerSideProps() {
     const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
     const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
     const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
-
+  
     return {
         props: {
             techs: techs.data,
@@ -119,5 +125,6 @@ export async function getServerSideProps() {
             projects: projects.data
         }
     }
-
-}
+  
+  }
+  
