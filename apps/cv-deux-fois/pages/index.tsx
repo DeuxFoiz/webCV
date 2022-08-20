@@ -113,14 +113,14 @@ export async function getServerSideProps({ req, res }) {
         'Cache-Control',
         'public, s-maxage=10, stale-while-revalidate=59'
       )
-    const port = process.env.PORT || 4200;
-    const techs = await fetch(`http://localhost:${port}/api/techs`).then(res => res.json());
-    const icons = await fetch(`http://localhost:${port}/api/icons`).then(res => res.json());
-    const projects = await fetch(`http://localhost:${port}/api/projects`).then((res) => res.json());
+    // const port = process.env.PORT || 4200;
+    // const techs = await fetch(`http://localhost:${port}/api/techs`).then(res => res.json());
+    // const icons = await fetch(`http://localhost:${port}/api/icons`).then(res => res.json());
+    // const projects = await fetch(`http://localhost:${port}/api/projects`).then((res) => res.json());
     
-    // const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
-    // const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
-    // const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
+    const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
+    const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
+    const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
   
     return {
         props: {
