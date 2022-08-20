@@ -134,9 +134,9 @@ export async function getServerSideProps({ req, res }) {
     // const icons = await fetch(`http://localhost:${port}/api/icons`).then(res => res.json());
     // const projects = await fetch(`http://localhost:${port}/api/projects`).then((res) => res.json());
     
-    // const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
-    // const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
-    // const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
+    const techs = await fetch(`https://${process.env.VERCEL_URL}/api/techs`).then(res => res.json());
+    const icons = await fetch(`https://${process.env.VERCEL_URL}/api/icons`).then(res => res.json());
+    const projects = await fetch(`https://${process.env.VERCEL_URL}/api/projects`).then((res) => res.json());
   
     return {
         props: {
