@@ -54,8 +54,8 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div  ref={forwardedRef} >
-                {isVisible ? <Blog /> : <div id='blog'/>}
+            <div  ref={forwardedRef} style={{marginLeft:'280px'}}>
+               <Blog /> 
             </div>
         );
     };
@@ -100,6 +100,7 @@ export default function Index({techs, icons, projects}) {
         <ViewportCv onEnterViewport={() => {handleInSection('#navcv')}}/>
         
         <ViewportBlog  onEnterViewport={() => {handleInSection('#navblog')}}/>
+        
         <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} onLeaveViewport={() => {handleInSection('#navblog')}} />
 
         
