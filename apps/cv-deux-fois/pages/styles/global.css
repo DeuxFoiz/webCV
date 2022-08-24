@@ -85,7 +85,6 @@ a {
     background-color: var(--bg-body);
     line-height: 1.5;
     margin: 0;
-    height: fit-content;
     margin-left:280px;
     z-index: 1;
     overflow-y: hidden;
