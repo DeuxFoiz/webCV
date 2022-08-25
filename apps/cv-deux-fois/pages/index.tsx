@@ -76,7 +76,7 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div ref={forwardedRef}>
+            <div ref={forwardedRef} id='contact'>
 
             {isVisible ? <Contact /> : <div style={{height:'870px'}}/>}
             </div>
