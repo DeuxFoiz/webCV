@@ -1,6 +1,5 @@
 import {useState} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Auth0Provider } from "@auth0/auth0-react";
 import Devicon from "../components/devicon";
 import EditIcon from "../components/edit-icon";
 import EditTech from "../components/edit-techs"; 
@@ -27,12 +26,6 @@ export default function Dashboard (props: {techs, icons, projects}) {
 
   return (
     isAuthenticated ? (
-      <Auth0Provider
-      domain="dev-s4knuldn.us.auth0.com"
-      clientId="qUbMSzjUSqD7cXXefbdHQRlspYe9nMxT"
-      // redirectUri={'http://localhost:4200/'}
-      redirectUri={'https://web-cv-nine.vercel.app/'}
-      >
     <div className="chapter">
             <style>
         {`
@@ -133,7 +126,6 @@ export default function Dashboard (props: {techs, icons, projects}) {
         );
       })}
     </div>
-    </Auth0Provider>
     ) : (
       <div className="flex-row flex-center">
         <p>Please login to view your dashboard</p>
