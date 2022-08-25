@@ -27,7 +27,6 @@
     height: 550px;
     padding: 0;
     margin : 0;
-    padding-bottom: 30px;
     border-radius: 1%;
     flex-wrap: wrap;
     background-color: var(--bg-trigger);
