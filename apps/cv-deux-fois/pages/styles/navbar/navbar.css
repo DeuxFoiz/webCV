@@ -59,7 +59,7 @@
   height: 20px;
   width: 80px;
   font-size: 0.875rem;
-
+  margin-top: 20px;
 }
 
 .hamburger {
@@ -71,12 +71,16 @@
 
 .container-switch {
   position: fixed;
-  top: 650px;
+  top: 670px;
   margin-left:90px;
   z-index: 3;
 }
 
 @media screen and (max-width: 1250px) {
+  .hireMe {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
   .navigation-menu, header  {
     position: fixed;
     top:auto;
@@ -151,8 +155,6 @@
   }
   .hireMe {
     height: 35px;
-    margin-top: 5px;
-    margin-bottom: 5px;
   }
   .hireMe svg {
     margin-left: 25px !important;

@@ -54,7 +54,7 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div  ref={forwardedRef} style={{marginLeft:'280px'}}>
+            <div  ref={forwardedRef} className='chapter'>
                <Blog /> 
             </div>
         );
@@ -76,7 +76,7 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div id="contact" className='chapter' ref={forwardedRef}>
+            <div ref={forwardedRef}>
 
             {isVisible ? <Contact /> : <div style={{height:'870px'}}/>}
             </div>

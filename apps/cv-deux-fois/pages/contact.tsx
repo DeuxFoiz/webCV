@@ -28,7 +28,7 @@ export default function Contact() {
         setToSend({ ...toSend, [e.target.name]: e.target.value });
       };
     return (
-        <div id='contact' style={{paddingBottom:'200px',width:'100vw'}}>
+        <div className='chapter' id='contact' style={{paddingBottom:'200px'}}>
             <h1 className="title bullet-bar">Contact</h1>
             <div className="flex-column flex-center">
             <p className='text' style={{marginTop: '50px'}}>Vous pouvez me contacter via mes réseau sociaux...</p>
