@@ -5,7 +5,7 @@
 
 #blog {
     width: 100%;
-    height: 1900px;
+    height: 2000px;
     border: none;
     padding-top: -200px;
     z-index: 1 ;
@@ -13,13 +13,13 @@
 }
 @media screen and (max-width: 1600px) {
     #blog {
-        height: 2000px;
+        height: 2100px;
     }
 }
 @media screen and (max-width: 1250px) {
     #blog {
         padding-left: 0;
-        height: 2100px;
+        height: 2200px;
     }
     .cv {
         width: 100%;
@@ -33,31 +33,31 @@
 }
 @media screen and (max-width: 1200px) {
     #blog {
-        height: 1700px;
+        height: 1800px;
     }
 }
 @media screen and (max-width: 1000px) {
     #blog {
-        height: 1800px;
+        height: 1900px;
     }
 }
 @media screen and (max-width: 850px) {
     #blog {
-        height: 1900px;
+        height: 2000px;
     }
 }
 @media screen and (max-width: 650px) {
     #blog {
-        height: 2000px;
+        height: 2100px;
     }
 }
 @media screen and (max-width: 550px) {
     #blog {
-        height: 2100px;
+        height: 2200px;
     }
 }
 @media screen and (max-width: 450px) {
     #blog {
-        height: 2200px;
+        height: 2300px;
     }
 }
