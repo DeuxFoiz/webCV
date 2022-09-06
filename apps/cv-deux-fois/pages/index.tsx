@@ -55,7 +55,7 @@ export default function Index({techs, icons, projects}) {
         }
         return (
             <div  ref={forwardedRef} className='chapter'>
-               <Blog /> 
+               {isVisible ? <Blog /> : <div id='blog'/>} 
             </div>
         );
     };
@@ -64,7 +64,6 @@ export default function Index({techs, icons, projects}) {
         return (
             <div ref={forwardedRef} id='cv' className='chapter' style={{overflow:'hidden', marginBottom:'100px'}}>
         <h1 className="title bullet-bar">Curriculum Vitae</h1>
-
                 <CV/>
             </div>
         );
@@ -101,9 +100,7 @@ export default function Index({techs, icons, projects}) {
         
         <ViewportBlog  onEnterViewport={() => {handleInSection('#navblog')}}/>
         
-        <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} onLeaveViewport={() => {handleInSection('#navblog')}} />
-
-        
+        <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} onLeaveViewport={() => {handleInSection('#navblog')}} />  
     </>
     );
 }
@@ -113,7 +110,7 @@ export async function getServerSideProps({ req, res }) {
     res.setHeader(
         'Cache-Control',
         'public, s-maxage=10, stale-while-revalidate=59'
-      )
+    )
     // const port = process.env.PORT || 4200;
     // const techs = await fetch(`http://localhost:${port}/api/techs`).then(res => res.json());
     // const icons = await fetch(`http://localhost:${port}/api/icons`).then(res => res.json());
@@ -130,6 +127,5 @@ export async function getServerSideProps({ req, res }) {
             projects: projects.data
         }
     }
-  
   }
   
