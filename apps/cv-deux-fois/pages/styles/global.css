@@ -124,10 +124,12 @@ a {
     padding-left: 1.5rem;
 }
 .bullet-bar::before {
-    content: "▎";
-    width: 2px;
+    content: "🮇";
+    width: 1px;
     height: 50px;
     color: #2a5980;
+    margin-right: 10px;
+    font-size: 1.1em;
 }
 .subtitle {
     font-size: 1.5rem;
