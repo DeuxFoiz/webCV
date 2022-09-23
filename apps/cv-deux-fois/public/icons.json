@@ -1,0 +1,204 @@
+[{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6146"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original.svg",
+    "border_color": "#de3423",
+    "name": "Scala",
+    "category": "Back end & Client lourd"
+  },{
+    "_id": {
+      "$oid": "62da8cb7b374effcfd38efbb"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sourcetree/sourcetree-original.svg",
+    "name": "IA & ML",
+    "border_color": "#567a9f",
+    "category": "None",
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6140"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg",
+    "border_color": "#f37726",
+    "name": "Jupyter",
+    "category": "IA & ML"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6141"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "border_color": "#f37726",
+    "name": "Python",
+    "category": "IA & ML"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6142"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "border_color": "#f0db4f",
+    "name": "JavaScript",
+    "category": "Front end"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6147"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    "border_color": "#ea2d2e",
+    "name": "Java",
+    "category": "Back end & Client lourd"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6148"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    "border_color": "#007acc",
+    "name": "MySQL",
+    "category": "Database"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e614c"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "border_color": "#ee5e3d",
+    "name": "Git",
+    "category": "Autres"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6150"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg",
+    "border_color": "#23719f",
+    "name": "Trello",
+    "category": "Autres"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6145"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "border_color": "#83cd29",
+    "name": "NodeJS",
+    "category": "Back end & Client lourd"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e614b"
+    },
+    "img_link": "https://influxdata.github.io/branding/img/downloads/influxdata-logo--symbol-preview--pool.svg",
+    "border_color": "#22adf6",
+    "name": "InfluxDB",
+    "category": "Database"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e614f"
+    },
+    "img_link": "https://d33wubrfki0l68.cloudfront.net/294812798daac8df0fc70bf31928ba93102aff35/ef0e7/assets/images/tool-icons/obsidian.png",
+    "border_color": "#8571db",
+    "name": "Obsidian",
+    "category": "Autres"
+  },{
+    "_id": {
+      "$oid": "62dab94cd359063b0a7e6166"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    "border_color": "#007acc",
+    "name": "NextJS",
+    "category": "Front end"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6143"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "border_color": "#448191",
+    "name": "React",
+    "category": "Front end"
+  },{
+    "_id": {
+      "$oid": "62da67acd359063b0a7e6144"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    "border_color": "#007acc",
+    "name": "TypeScript",
+    "category": "Back end & Client lourd"
+  },{
+    "_id": {
+      "$oid": "630742e4292ea91d64cbad7f"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-line.svg",
+    "border_color": "#9c043a",
+    "name": "C++",
+    "category": "None"
+  },{
+    "_id": {
+      "$oid": "63074367292ea91d64cbad80"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-line.svg",
+    "border_color": "#01599c",
+    "name": "C",
+    "category": "None"
+  },{
+    "_id": {
+      "$oid": "630743e4292ea91d64cbad81"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+    "border_color": "#77bc20",
+    "name": "Spring",
+    "category": "Back end & Client lourd"
+  },{
+    "_id": {
+      "$oid": "630799cd3ca4c4b690940803"
+    },
+    "border_color": "#00bcb4",
+    "name": "Algorithmie",
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/thealgorithms/thealgorithms-original.svg",
+    "category": "None"
+  },{
+    "_id": {
+      "$oid": "63079a747e29db7a14f711dc"
+    },
+    "border_color": "#6081b6",
+    "name": "PHP",
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg",
+    "category": "None"
+  },{
+    "_id": {
+      "$oid": "63079b117e29db7a14f711dd"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg",
+    "border_color": "#4faa41",
+    "name": "MongoDB",
+    "category": "Database"
+  },{
+    "_id": {
+      "$oid": "63079b577e29db7a14f711de"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg",
+    "border_color": "#018bff",
+    "name": "Neo4j",
+    "category": "Database"
+  },{
+    "_id": {
+      "$oid": "63079b6a7e29db7a14f711df"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg",
+    "border_color": "#019bc6",
+    "name": "Docker",
+    "category": "Autres"
+  },{
+    "_id": {
+      "$oid": "6317116ec0769dbe795f9b7e"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg",
+    "name": "CSS",
+    "border_color": "#1572B6",
+    "category": "None",
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "63172154c0769dbe795f9b7f"
+    },
+    "img_link": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg",
+    "name": "HTML",
+    "border_color": "#E44D26",
+    "category": "None",
+    "__v": 0
+  }]

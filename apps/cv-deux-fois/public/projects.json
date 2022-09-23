@@ -1,0 +1,239 @@
+[{
+  "_id": {
+    "$oid": "62d82d2ab01c41306c3b1e96"
+  },
+  "name": "Candy Crush",
+  "date": "2021",
+  "description": "TP de Programmation Web : Développement d'un jeu jeu Candy Crush en javascript natif avec l'implémentation d'un modèle MVC. \nLivré avec un dossier d’annalyse.",
+  "image": "/assets/projects/candyCrush/screen.gif",
+  "link": "/assets/projects/candyCrush/index.html",
+  "icons": [
+    "JavaScript",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d82d2ab01c41306c3b1e97"
+  },
+  "name": "Jeu echec",
+  "date": "2021",
+  "description": "Challenge : développement d'un jeu d'échec en Javascript natif et implémenter un modèle MVC en un week-end et sans aides extérieures.",
+  "image": "/assets/projects/chess/screen.png",
+  "link": "../assets/projects/chess/index.html",
+  "icons": [
+    "JavaScript",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d82d2ab01c41306c3b1e98"
+  },
+  "name": "Snake Solver",
+  "date": "2019",
+  "description": "Implémentation du jeu Snake en javascript natif et une \"IA\" qui repose sur une petite astuce en utilisant 2 algorithmes de pathsfinding (BFS et DFS) pour résoudre le problème du Snake.",
+  "image": "/assets/projects/snake/screen.gif",
+  "link": "../assets/projects/snake/home.html",
+  "icons": [
+    "JavaScript",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d82d2ab01c41306c3b1e99"
+  },
+  "name": "Recettes",
+  "date": "2022",
+  "description": "\nOutil pour créer, structurer et requêter semi-automatiquement une ontology de recettes de cuisine, et tout ce qui les composes, en language naturel. <br/>\nFourni avec la documentation et les tests.",
+  "image": "/assets/img/recette.png",
+  "link": "",
+  "icons": [
+    "Python",
+    "Neo4j",
+    "Spark",
+    "Docker"
+  ]
+},{
+  "_id": {
+    "$oid": "62d82d2ab01c41306c3b1e9a"
+  },
+  "name": "Price Tracker",
+  "date": "2022",
+  "description": "Un logiciel NodeJS qui se connecte en websocket à un serveur, s'authentifie et enrengistre les prix toutes les 30 minutes. <br/>\nUne partie de rétro-engineering avec wireshark fut nécessaire.",
+  "image": "/assets/img/PriceTracker.png",
+  "link": "",
+  "icons": [
+    "NodeJS",
+    "InfluxDB"
+  ]
+},{
+  "_id": {
+    "$oid": "62d82d2ab01c41306c3b1e9b"
+  },
+  "name": "Perceptron",
+  "date": "2021",
+  "description": "Implémentation d'un réseau de neuronne ou perceptron avec Scala via le paradigme fonctionnel.",
+  "image": "/assets/img/Perceptron.jpg",
+  "link": "../assets/projects/planets/index.html",
+  "icons": [
+    "Scala",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d82d2ab01c41306c3b1e9d"
+  },
+  "name": "Pathfinding vizualizer",
+  "date": "2019",
+  "description": "Implémentation des principaux algorithmes de pathfiding (A*, BFS, DFS et Dijkstra) avec visualisation de leurs fonctionnement et création automatique de labyrinthe en utilisant la réccursivité.",
+  "image": "/assets/img/PathFind.png",
+  "link": "../assets/projects/planets/index.html",
+  "icons": [
+    "Python",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d82d2ab01c41306c3b1e9e"
+  },
+  "name": "Sort visualizer",
+  "date": "2017",
+  "description": "Implémentation des principaux algorithmes de trie (bulles, insertion, selection, rapide, fusion) et visualisation de leurs fonctionnement.",
+  "image": "/assets/img/Trie.png",
+  "link": "../assets/projects/planets/index.html",
+  "icons": [
+    "Python",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d82d2ab01c41306c3b1e9f"
+  },
+  "name": "Planets generator",
+  "date": "2019",
+  "description": "Générateur procédurale de planètes (gazeuze, mars, glace, terre) grâce à l'implémentation du bruit de Perlin sur 2 dimension et affectation des valeurs à un type de terrain.",
+  "image": "/assets/img/planets.png",
+  "link": "../assets/projects/planets/index.html",
+  "icons": [
+    "JavaScript",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d98094568d7638ab7a1f42"
+  },
+  "name": "Research Paper OCR parser",
+  "date": "2020",
+  "description": "Detection automatique des parties importante d'un papier de recherche en pdf (auteurs, abstract, chapitres, conclusion et annexe) et retranscription du texte.",
+  "image": "/assets/img/PDF.png",
+  "link": "../assets/projects/chess/index.html",
+  "icons": [
+    "Python",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d98227568d7638ab7a1f4b"
+  },
+  "name": "libManager",
+  "date": "2020",
+  "description": "Logiciel de Gestion de bibliothèque en anglais et français, avec authentification, possibilité de louer un livre et panneau d'administration. <br />\nDévellopé en groupe de 4 avec Java et Spring.",
+  "image": "/assets/img/libmanag.png",
+  "link": "../assets/projects/chess/index.html",
+  "icons": [
+    "Java",
+    "Spring"
+  ]
+},{
+  "_id": {
+    "$oid": "62d984bb568d7638ab7a1f4d"
+  },
+  "name": "Forum et Chat",
+  "date": "2017",
+  "description": "Chat en direct et petit forum dévelopé en PHP durant mon stage de seconde, sans authentification",
+  "image": "/assets/img/Chat.png",
+  "link": "../assets/img/miniCMS",
+  "icons": [
+    "PHP",
+    ""
+  ]
+},{
+  "_id": {
+    "$oid": "62d984bb568d7638ab7a1f4e"
+  },
+  "name": "mini CMS",
+  "date": "2018",
+  "description": "Site sur le thème de l'espace et CMS dévellopé en PHP avec authentification et panneau d'administration.",
+  "image": "/assets/img/miniCMS.png",
+  "link": "../assets/imgl",
+  "icons": [
+    "PHP",
+    ""
+  ]
+},{
+  "_id": {
+    "$oid": "62d98c7b568d7638ab7a1f52"
+  },
+  "name": "Guitar Hero",
+  "date": "2018",
+  "description": "Petit jeux inspiré de guitar hero, développé en C via la SDL et utilisant des fichiers midi pour les musiques.",
+  "image": "/assets/img/Guitar.png",
+  "link": "../assets/projects/candyCrush/index.html",
+  "icons": [
+    "C",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d98ce2568d7638ab7a1f54"
+  },
+  "name": "Planet Kepler Verlvet integration",
+  "date": "2018",
+  "description": "Visualisation de l'attraction gravitationnelle entre deux objets via l'implémentation des équation de Kepler et la SDL en C.",
+  "image": "/assets/img/Kepler.png",
+  "link": "../assets/projects/candyCrush/index.html",
+  "icons": [
+    "C",
+    "Algorithmie"
+  ]
+},{
+  "_id": {
+    "$oid": "62d99677568d7638ab7a1f56"
+  },
+  "name": "Calendar",
+  "date": "2020",
+  "description": "Clone de google calendar avec un style différent, Calendrier interactif dévelloppé en React.",
+  "image": "/assets/img/Calendar.png",
+  "link": "../assets/img/Calendar.png",
+  "icons": [
+    "React",
+    "",
+    "MongoDB"
+  ]
+},{
+  "_id": {
+    "$oid": "62d9c7c6cd1453f52c958fc4"
+  },
+  "name": "ML et données hyperspectrales",
+  "date": "2022",
+  "description": "Annalyse d'images satellites mesurées à 63 longueurs d'ondes différentes. \n<br/>\nL'objectif est de d'identifier la faune, la flore et les construction humaine, ainsi que leurs caractéristiques (ex: plante déshydratée).",
+  "image": "/assets/img/hyperspectral.png",
+  "link": "",
+  "icons": [
+    "Jupyter",
+    "Python",
+    "IA & ML"
+  ]
+},{
+  "_id": {
+    "$oid": "63078ab882ae796fb5f2231f"
+  },
+  "name": "Jeu des carrés",
+  "date": "2017",
+  "description": "Projet pour le bac d'ISN, jeu des carrés développé avec python et tkinter, pour une  note obtenue de 18/20",
+  "image": "/assets/img/carre.png",
+  "link": "../assets/img/miniCMS",
+  "icons": [
+    "",
+    "Python"
+  ]
+}]

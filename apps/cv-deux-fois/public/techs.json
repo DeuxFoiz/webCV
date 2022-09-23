@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "63077c0482ae796fb5f2231a"
+  },
+  "value": "IA & ML",
+  "text": "Introduit durant ma première année de Master, c'est une voie qui m'intéresse par son côté multidisciplinaire avec une prédominance mathématique."
+},{
+  "_id": {
+    "$oid": "63077c0c82ae796fb5f2231b"
+  },
+  "value": "Front end",
+  "text": "La discipline que j'ai le plus travaillée avec l'algorithmie, j'adore créer des programmes qui sont visuels, accessibles et interactifs."
+},{
+  "_id": {
+    "$oid": "63077c1182ae796fb5f2231c"
+  },
+  "value": "Back end & Client lourd",
+  "text": "Récupérer des données, les structurer, les stocker et les mettre à disposition, j'aime toutes ces facettes présentes dans la plupart des projets."
+},{
+  "_id": {
+    "$oid": "63077c1682ae796fb5f2231d"
+  },
+  "value": "Database",
+  "text": "Le sujet que j'ai choisi pour mon mémoire de master. Leurs évolutions, les spécificités et leurs intérêts suivant les situations."
+},{
+  "_id": {
+    "$oid": "63077c2382ae796fb5f2231e"
+  },
+  "value": "Autres",
+  "text": "Les outils que j'utilise au quotidien, de la prise de notes à la gestion de projet, en passant par la virtualisation, des classiques."
+}]
