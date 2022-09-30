@@ -10,7 +10,7 @@ export default function Intro() {
                 Je suis étudiant dans le domaine des Applications Interactives et des Données Numériques <br/>
                 Je souhaite me spécialiser dans l&rsquo;intelligence artificielle et les métiers de la data, du web ou d&rsquo;applications lourdes.<br/>
                 <br/>
-                Je partage les notes obsidian sur mon blog, ainsi que des articles que je conseil sur ces sujets et l&rsquo;informatique en général.<br/>
+                Je partage mes notes obsidian sur mon blog, ainsi que des articles que je conseil sur ces sujets et l&rsquo;informatique en général.<br/>
                 N&rsquo;hésitez pas à regarder mon Portfolio ou mon Curriculum Vitae pour plus d&rsquo;informations.
                 
                 </p>
