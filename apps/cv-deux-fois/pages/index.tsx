@@ -97,7 +97,7 @@ export default function Index({techs, icons, projects}) {
         <ViewportTmp onEnterViewport={() => {handleInSection('#navportfolio')}} />
 
         <ViewportCv onEnterViewport={() => {handleInSection('#navcv')}}/>
-        
+        <ViewportTmp onEnterViewport={() => {handleInSection('#navcv')}} />
         <ViewportBlog  onEnterViewport={() => {handleInSection('#navblog')}}/>
         
         <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} onLeaveViewport={() => {handleInSection('#navblog')}} />  
