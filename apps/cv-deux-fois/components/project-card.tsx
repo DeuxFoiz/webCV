@@ -21,10 +21,10 @@ export default function Project(props : {
     const devicons = props.icons.filter((icon) => { return props.project.icons.includes(icon.name) });
     return (
         <div className="flex-column project-item shadow-container" style={{ alignItems: 'center', justifyContent: 'start' }}>
-            <div style={{width:'375px', height:'250px'}}>
+            <div style={{width:'350px', height:'250px'}}>
                 <Image src={props.project.image} width={375} height={250} alt={props.project.name} style={{borderRadius:'1%'}}/>
             </div>
-            <h3 className="subtitle" style={ { marginTop:'1rem', marginLeft:'0'}}>{props.project.name}</h3>
+            <h3 className="subtitle" style={ { marginTop:'1rem', marginLeft:'0', marginBottom:'20px'}}>{props.project.name}</h3>
             <div className="flex-row flex-center" >
                 {            
                 devicons.map((devicon, index) => {

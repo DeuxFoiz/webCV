@@ -17,7 +17,7 @@ export default function Devicon(props: {
                 }
                 .devicon {
                     padding: 0.2rem;
-                    margin: 0.5rem;
+                    margin: 5px;
                     display: flex;
                     align-items: center;
                     justify-content: left;
@@ -25,7 +25,7 @@ export default function Devicon(props: {
                     border-radius: 20px;
                     border-style: solid;
                     border-width: 1px;
-                    width: 100px;
+                    width: 90px;
                     height: 25px;
                 }
                 .devicon-content {
