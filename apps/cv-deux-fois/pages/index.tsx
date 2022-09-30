@@ -35,6 +35,11 @@ export default function Index({techs, icons, projects}) {
             <div ref={props.forwardedRef} style={{position:"relative", top:"-700px"}} />
         );
     };
+    const tmpBLock2 = (props: { inViewport: boolean, forwardedRef: any }) => {
+        return (
+            <div ref={props.forwardedRef} style={{position:"relative", top:"-100px"}} />
+        );
+    };
     const Portfolioblock = (props: { inViewport: boolean, forwardedRef: any }) => {
         const { inViewport, forwardedRef } = props;
         const [isVisible, setIsVisible] = useState(false);
@@ -54,7 +59,7 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div  ref={forwardedRef} className='chapter'  style={{marginTop:"300px"}}>
+            <div  ref={forwardedRef} className='chapter'  style={{marginTop:"200px"}}>
                {isVisible ? <Blog /> : <div id='blog'/>} 
             </div>
         );
@@ -75,7 +80,7 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div ref={forwardedRef} id='contact' style={{marginTop:"1700px"}}>
+            <div ref={forwardedRef} id='contact' style={{marginTop:"150px"}}>
 
             {isVisible ? <Contact /> : <div style={{height:'870px'}}/>}
             </div>
@@ -86,6 +91,7 @@ export default function Index({techs, icons, projects}) {
     const ViewportPortfolio = handleViewport(Portfolioblock);
     const ViewportHome = handleViewport(Homeblock);
     const ViewportTmp = handleViewport(tmpBLock);
+    const ViewportTmp2 = handleViewport(tmpBLock2);
     const ViewportBlog = handleViewport(Blogblock);
     const ViewportCv = handleViewport(cvBlock);
     const ViewportContact = handleViewport(Contactblock);
@@ -97,7 +103,8 @@ export default function Index({techs, icons, projects}) {
         <ViewportTmp onEnterViewport={() => {handleInSection('#navportfolio')}} />
 
         <ViewportCv onEnterViewport={() => {handleInSection('#navcv')}}/>
-        <ViewportTmp onEnterViewport={() => {handleInSection('#navcv')}} />
+        <ViewportTmp2 onEnterViewport={() => {handleInSection('#navcv')}} onLeaveViewport={() => {handleInSection('#navblog')}} />  
+
         <ViewportBlog  onEnterViewport={() => {handleInSection('#navblog')}}/>
         
         <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} onLeaveViewport={() => {handleInSection('#navblog')}} />  

@@ -9,10 +9,8 @@
     width: 100%;
     height: 2100px;
     border: none;
-    margin-top: -200px;
-
+    
     z-index: 1; ;
-    position: absolute;
     scrollbar-width: none;
 }
 @media screen and (max-width: 1600px) {
