@@ -37,7 +37,7 @@ export default function Index({techs, icons, projects}) {
     };
     const tmpBLock2 = (props: { inViewport: boolean, forwardedRef: any }) => {
         return (
-            <div ref={props.forwardedRef} style={{position:"relative", top:"-100px"}} />
+            <div ref={props.forwardedRef} style={{position:"relative", top:"100px"}} />
         );
     };
     const Portfolioblock = (props: { inViewport: boolean, forwardedRef: any }) => {
@@ -103,7 +103,7 @@ export default function Index({techs, icons, projects}) {
         <ViewportTmp onEnterViewport={() => {handleInSection('#navportfolio')}} />
 
         <ViewportCv onEnterViewport={() => {handleInSection('#navcv')}}/>
-        <ViewportTmp2 onEnterViewport={() => {handleInSection('#navcv')}} onLeaveViewport={() => {handleInSection('#navblog')}} />  
+        <ViewportTmp2 onEnterViewport={() => {handleInSection('#navcv')}} />  
 
         <ViewportBlog  onEnterViewport={() => {handleInSection('#navblog')}}/>
         
