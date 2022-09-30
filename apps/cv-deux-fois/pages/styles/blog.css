@@ -48,16 +48,16 @@
 }
 @media screen and (max-width: 650px) {
     #blog {
-        height: 2100px;
+        height: 2200px;
     }
 }
 @media screen and (max-width: 550px) {
     #blog {
-        height: 2200px;
+        height: 2300px;
     }
 }
 @media screen and (max-width: 450px) {
     #blog {
-        height: 2300px;
+        height: 2400px;
     }
 }
