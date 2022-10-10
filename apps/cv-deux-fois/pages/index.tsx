@@ -80,7 +80,7 @@ export default function Index({techs, icons, projects}) {
             setIsVisible(true);
         }
         return (
-            <div ref={forwardedRef} id='contact' style={{marginTop:"150px"}}>
+            <div ref={forwardedRef} id='contact' >
 
             {isVisible ? <Contact /> : <div style={{height:'870px'}}/>}
             </div>
@@ -105,8 +105,8 @@ export default function Index({techs, icons, projects}) {
         <ViewportCv onEnterViewport={() => {handleInSection('#navcv')}}/>
         <ViewportTmp2 onEnterViewport={() => {handleInSection('#navcv')}}/>  
 
+        <ViewportTmp2 onEnterViewport={() => {handleInSection('#navblog')}} />
         <ViewportBlog  onEnterViewport={() => {handleInSection('#navblog')}}/>
-        <ViewportTmp onEnterViewport={() => {handleInSection('#navblog')}} />
         <ViewportContact onEnterViewport={() => {handleInSection('#navcontact')}} onLeaveViewport={() => {handleInSection('#navblog')}} />  
     </>
     );
