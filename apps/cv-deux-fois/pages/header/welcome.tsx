@@ -9,7 +9,7 @@ export default function Welcome(props : {
         Je suis un étudiant Vannetais passionné
             <br/>
             <br/>Je cherche un stage de M2
-            <br/> pour le premier semestre de l&lsquot;année 2023
+            <br/> pour le premier semestre de l'année 2023
         </p>
         <Image src={require('../../public/assets/img/pdp.jpg')} className="pdp" alt="profil"  width={150} height={150} loading="lazy"/>
     </div>
